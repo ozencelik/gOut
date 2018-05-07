@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">gOut</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="accesible">Accesible</string>
+    <string name="profile">Profile</string>
+</resources>
