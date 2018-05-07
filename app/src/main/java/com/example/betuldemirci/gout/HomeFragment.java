@@ -117,11 +117,12 @@ public class HomeFragment extends Fragment {
         });
 
 
-        models.add(new ArcProgressStackView.Model("Circle", 25, Color.parseColor(bgColors[0]), Color.parseColor(mStartColors[0])));
-        models.add(new ArcProgressStackView.Model("Progress", 50, Color.parseColor(bgColors[1]), Color.parseColor(mStartColors[1])));
-        models.add(new ArcProgressStackView.Model("Stack", 75, Color.parseColor(bgColors[2]), Color.parseColor(mStartColors[2])));
-        models.add(new ArcProgressStackView.Model("View", 100, Color.parseColor(bgColors[3]), Color.parseColor(mStartColors[3])));
+        models.add(new ArcProgressStackView.Model("Adım", 25, Color.parseColor(bgColors[0]), Color.parseColor(mStartColors[0])));
+        models.add(new ArcProgressStackView.Model("Kalori", 50, Color.parseColor(bgColors[1]), Color.parseColor(mStartColors[1])));
+//        models.add(new ArcProgressStackView.Model("Stack", 75, Color.parseColor(bgColors[2]), Color.parseColor(mStartColors[2])));
+//        models.add(new ArcProgressStackView.Model("View", 100, Color.parseColor(bgColors[3]), Color.parseColor(mStartColors[3])));
 
+        arcProgressStackView.setDrawWidthDimension(60*models.size());
         arcProgressStackView.setModels(models);
         arcProgressStackView.setIsShadowed(false);
         arcProgressStackView.setIsDragged(false);

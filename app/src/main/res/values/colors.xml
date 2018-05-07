@@ -37,6 +37,8 @@
 
     <color name="black_overlay">#66000000</color>
 
+    <color name="background_fragment">#2b2b2b</color>
+
     <color name="materail_green">#FF66ff66</color>
     <color name="materail_blue">#FF0BCCE6</color>
     <color name="materail_white">#FFFAFAFA</color>

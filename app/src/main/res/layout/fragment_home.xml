@@ -25,12 +25,50 @@
             android:layout_height="fill_parent"
             android:orientation="vertical"
             android:gravity="center">
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="440dp"
+                android:layout_height="400dp"
+                android:layout_gravity="bottom">
                 <android.support.v7.widget.CardView
-                    android:layout_width="360dp"
+                    android:layout_width="400dp"
                     android:layout_height="360dp">
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="top"
+                        android:weightSum="3">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Kalori"
+                            android:textSize="15sp"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Aktif Süre"
+                            android:textSize="15sp"
+                            android:layout_gravity="top|center"
+                            android:layout_weight="1"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:text="Kilometre"
+                            android:textSize="15sp"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="center"/>
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -41,7 +79,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Today's Step"
+                        android:text="Günlük Adım"
                         android:textSize="20sp"/>
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -92,7 +130,7 @@
                     </devlight.io.library.ArcProgressStackView>
 
                 </android.support.v7.widget.CardView>
-            </RelativeLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:clipToPadding="false"
