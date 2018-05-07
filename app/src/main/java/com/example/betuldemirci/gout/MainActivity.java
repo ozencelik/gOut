@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity{
     private TextView mTextMessage;
     android.support.v4.app.FragmentManager manager;
     android.support.v4.app.FragmentTransaction transaction;
+    private CoordinatorLayout mCoordinator;
+    private BottomNavigationView mNavigation;
+    private CoordinatorLayout.LayoutParams mLayoutParams;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,12 +52,13 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
+        mTextMessage = findViewById(R.id.message);
+        mNavigation = findViewById(R.id.navigation);
+        //mCoordinator = findViewById(R.id.container);
+        //mLayoutParams = (CoordinatorLayout.LayoutParams) mNavigation.getLayoutParams();
+        //mLayoutParams.setBehavior(new BottomNavigationViewBehavior());
 
-        layoutParams.setBehavior(new BottomNavigationViewBehavior());
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        mNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();

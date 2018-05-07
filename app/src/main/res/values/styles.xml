@@ -26,4 +26,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.PopupOverlay" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="background">@color/colorAccent</item>
+        <item name="windowActionBarOverlay">true</item>
+
+    </style>
+
 </resources>
