@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity{
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
         transaction.replace(R.id.container, new HomeFragment()).commit();
-    }
+}
 
 
 
