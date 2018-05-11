@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:background="@drawable/circle_shape_purple"
+                android:background="@drawable/circle_shape_red"
                 android:src="@drawable/ic_monetization_on_black_24dp"
                 android:padding="10dp"/>
             <TextView
