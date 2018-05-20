@@ -22,8 +22,8 @@
     </string-array>
 
     <string-array name="medical_express">
-        <item>#a3a3a3</item>
-        <item>#bbbbbb</item>
+        <item>#f3f3f3</item>
+        <item>#d3d3d3</item>
         <item>#cccccc</item>
         <item>#dddddd</item>
     </string-array>

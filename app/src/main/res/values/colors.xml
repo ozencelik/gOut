@@ -21,7 +21,7 @@
     <color name="aluminum">#E0999999</color>
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
-    <color name="metal">#DDDDDD</color>
+    <color name="metal">#F3F3F3</color>
     <color name="white">#FFFFFF</color>
 
     <color name="colorPrimary">#FFC107</color>
@@ -41,7 +41,7 @@
 
     <color name="materail_green">#FF66ff66</color>
     <color name="materail_blue">#FF0BCCE6</color>
-    <color name="materail_white">#FFFAFAFA</color>
+    <color name="materail_white">#FFF8F8F8</color>
     <color name="materail_red">#FFFF3B30</color>
     <color name="materail_brown">#FFA2845E</color>
 

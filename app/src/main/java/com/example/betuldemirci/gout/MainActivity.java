@@ -30,14 +30,8 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.navigation_home:
                     transaction.replace(R.id.container, new HomeFragment()).commit();
                     return true;
-                case R.id.navigation_dashboard:
-                    transaction.replace(R.id.container, new DashboardFragment()).commit();
-                    return true;
-                case R.id.navigation_notifications:
-                    transaction.replace(R.id.container, new NotificationFragment()).commit();
-                    return true;
-                case R.id.navigation_accesebility:
-                    transaction.replace(R.id.container, new AccesibleFragment()).commit();
+                case R.id.navigation_challenge:
+                    transaction.replace(R.id.container, new ChallengeFragment()).commit();
                     return true;
                 case R.id.navigation_account_circle:
                     transaction.replace(R.id.container, new ProfileFragment()).commit();

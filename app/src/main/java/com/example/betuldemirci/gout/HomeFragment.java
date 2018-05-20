@@ -94,25 +94,24 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mStartColors = getResources().getStringArray(R.array.polluted_waves);
+        //DEFINITIONS
+        mStartColors = getResources().getStringArray(R.array.devlight);
         bgColors = getResources().getStringArray(R.array.medical_express);
-
         typoRounded = Typeface.createFromAsset(v.getContext().getAssets(),  "fonts/typo grotesk rounded light demo.otf");
-
         mStepper = v.findViewById(R.id.stepperTouch);
-
         arcProgressStackView = v.findViewById(R.id.apsv);
         models = new ArrayList<>();
-
         mWaveLoadingView = v.findViewById(R.id.waveLoadingView);
 
+
+        //SETT VALUES
         mStepper.stepper.setMax(10);
         mStepper.stepper.setMin(0);
 
         mStepper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Water Num : "+mStepper.stepper.getValue(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Water Num : "+mStepper.stepper.getValue(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -133,66 +132,6 @@ public class HomeFragment extends Fragment {
                 arcProgressStackView.animate();
             }
         });
-
-
-//        mStartColors = getResources().getIntArray(R.array.polluted_waves);
-//        bgColors = getResources().getIntArray(R.array.medical_express);
-//
-//
-//        final ArrayList<ArcProgressStackView.Model> models = new ArrayList<>();
-//        models.add(new ArcProgressStackView.Model("Circle", 25, bgColors[0],mStartColors[0]));
-//        models.add(new ArcProgressStackView.Model("Progress", 50, bgColors[1], mStartColors[1]));
-//        models.add(new ArcProgressStackView.Model("Stack", 75, bgColors[2], mStartColors[2]));
-//        models.add(new ArcProgressStackView.Model("View", 100, bgColors[3], mStartColors[3]));
-//
-//        final ArcProgressStackView arcProgressStackView = v.findViewById(R.id.apsv);
-//        arcProgressStackView.setModels(models);
-
-
-
-
-//        Comment for Badge View and Pie Chart
-
-//        mBadge = v.findViewById(R.id.badge);
-//        mBadge.setNumber(10);
-//
-//        mWaveLoadingView = v.findViewById(R.id.waveLoadingView);
-//        mPieChart = v.findViewById(R.id.piechart);
-//
-//        mPieChart.setUsePercentValues(true);
-//        mPieChart.getDescription().setEnabled(true);
-//        mPieChart.setTransparentCircleRadius(50f);
-//
-//        mPieChart.setTouchEnabled(false);
-//
-//        mPieChart.setExtraOffsets(5, 10, 5, 5);
-//        mPieChart.setDragDecelerationFrictionCoef(0.95f);
-//
-//        mPieChart.setDrawHoleEnabled(true);
-//        mPieChart.setHoleColor(Color.WHITE);
-//        mPieChart.setTransparentCircleRadius(61f);
-//        mPieChart.setMaxAngle(180);
-//        mPieChart.setRotationAngle(180);
-//
-//        mPieChart.animateXY(1000, 1000);
-//
-//        ArrayList<PieEntry> yValues = new ArrayList<>();
-//        yValues.add(new PieEntry(34f, "XXX"));
-//        yValues.add(new PieEntry(23f, "Turkey"));
-//        yValues.add(new PieEntry(54f, "Usa"));
-//        yValues.add(new PieEntry(12f, "Germany"));
-//
-//
-//        PieDataSet mDataSet = new PieDataSet(yValues, "Countries");
-//        mDataSet.setSliceSpace(3f);
-//        mDataSet.setSelectionShift(5f);
-//        mDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
-//
-//        PieData mData = new PieData(mDataSet);
-//        mData.setValueTextSize(10f);
-//        mData.setValueTextColor(Color.YELLOW);
-//
-//        mPieChart.setData(mData);
 
         return v;
     }
