@@ -36,14 +36,14 @@ public class VideoActivity extends AppCompatActivity{
         final Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(VideoActivity.this,MainActivity.class));
+                startActivity(new Intent(VideoActivity.this,LoginActivity.class));
             }
         });
 
         final Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(VideoActivity.this,MainActivity.class));
+                startActivity(new Intent(VideoActivity.this,SignupActivity.class));
             }
         });
 

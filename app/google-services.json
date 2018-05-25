@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1005038421531",
+    "firebase_url": "https://gout-ae1f4.firebaseio.com",
+    "project_id": "gout-ae1f4",
+    "storage_bucket": "gout-ae1f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005038421531:android:bd34d3f351fd346a",
+        "android_client_info": {
+          "package_name": "com.example.betuldemirci.gout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005038421531-5rmp1e3t76pp44mi1hkg5ab8prt2hlfo.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1005038421531-5rmp1e3t76pp44mi1hkg5ab8prt2hlfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzu1rgrpC1qqPFYaZHRwtYsZXYj7_BGuk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

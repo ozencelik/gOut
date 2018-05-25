@@ -43,8 +43,6 @@ public class ChallengeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    LinearLayout l;
-
     public ChallengeFragment() {
 
     }
@@ -72,50 +70,27 @@ public class ChallengeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_home, container, false);
-
-        l = v.findViewById(R.layout.fragment_home);
+        v = inflater.inflate(R.layout.fragment_challenge, container, false);
 
         tablayout = v.findViewById(R.id.tablayout_id);
         viewpager = v.findViewById(R.id.viewpager_id);
-        adapter = new ViewPagerAdapter(getFragmentManager());
+        adapter = new ViewPagerAdapter(getChildFragmentManager());
 
         //Add Fragment
-        adapter.AddFragment(new NewChallenge(), "New");
         adapter.AddFragment(new PastChallenge(), "Past");
+        adapter.AddFragment(new NewChallenge(), "New");
 
-//        runPager = new Runnable() {
-//
-//            @Override
-//            public void run()
-//            {
-//                getFragmentManager().beginTransaction().addFragment(R.layout.past_challenge, ChallengeFragment.newInstance()).commit();
-//            }
-//        };
-//        handler.post(runPager);
 
         viewpager.setAdapter(adapter);
-
         tablayout.setupWithViewPager(viewpager);
+
+        tablayout.getTabAt(0).setIcon(R.drawable.past);
+        tablayout.getTabAt(1).setIcon(R.drawable.future);
 
         return v;
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
-    }
 
-    /**
-     * @see android.support.v4.app.Fragment#onPause()
-     */
-    @Override
-    public void onPause()
-    {
-        super.onPause();
-        handler.removeCallbacks(runPager);
-    }
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

@@ -1,16 +1,13 @@
 package com.example.betuldemirci.gout;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,29 +18,15 @@ import nl.dionsegijn.steppertouch.StepperTouch;
 
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class HomeFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class HomeFragment extends Fragment{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private View v;
 
-    private OnFragmentInteractionListener mListener;
     private WaveLoadingView mWaveLoadingView;
     private StepperTouch mStepper;
 
@@ -55,6 +38,9 @@ public class HomeFragment extends Fragment {
     private ArcProgressStackView arcProgressStackView;
     private Typeface typoRounded;
 
+    TextView stepCount;
+
+    private static final String TAG = "AGFAN";
 
 
     public HomeFragment() {
@@ -103,6 +89,8 @@ public class HomeFragment extends Fragment {
         models = new ArrayList<>();
         mWaveLoadingView = v.findViewById(R.id.waveLoadingView);
 
+        stepCount = v.findViewById(R.id.step_count);
+
 
         //SETT VALUES
         mStepper.stepper.setMax(10);
@@ -133,44 +121,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+
         return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    public void updateStep(int numberSteps){
+        stepCount.setText(numberSteps);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }
