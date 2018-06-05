@@ -10,7 +10,7 @@
     android:background="@color/materail_white"
     android:gravity="center"
     android:id="@+id/ll"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -376,10 +376,6 @@
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
             </LinearLayout>
-
-
-
-
 
             <LinearLayout
                 android:clipToPadding="false"

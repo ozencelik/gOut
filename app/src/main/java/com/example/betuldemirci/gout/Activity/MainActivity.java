@@ -1,4 +1,4 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Activity;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -14,8 +14,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.betuldemirci.gout.Fragments.ChallengeFragment;
+import com.example.betuldemirci.gout.Fragments.HomeFragment;
+import com.example.betuldemirci.gout.Fragments.NewHomeFragment;
 import com.example.betuldemirci.gout.Pedometer.StepDetector;
 import com.example.betuldemirci.gout.Pedometer.StepListener;
+import com.example.betuldemirci.gout.Fragments.ProfileFragment;
+import com.example.betuldemirci.gout.R;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -51,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     static double distance;
 
 
-    private HomeFragment mHomeFragment;
+    private NewHomeFragment mHomeFragment;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -63,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             transaction = manager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    transaction.replace(R.id.container, new HomeFragment()).commit();
+                    transaction.replace(R.id.container, new NewHomeFragment()).commit();
                     return true;
                 case R.id.navigation_challenge:
                     transaction.replace(R.id.container, new ChallengeFragment()).commit();
@@ -101,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
 
-        mHomeFragment = new HomeFragment();
+        mHomeFragment = new NewHomeFragment();
 
         transaction.replace(R.id.container, mHomeFragment).commit();
 

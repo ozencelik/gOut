@@ -1,4 +1,4 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Adapters;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

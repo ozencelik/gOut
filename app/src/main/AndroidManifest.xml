@@ -10,20 +10,27 @@
         android:roundIcon="@mipmap/gout_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
-
-        <activity android:name=".VideoActivity"/>
-
-        <activity android:name=".LoginActivity"/>
-
-        <activity android:name=".SignupActivity"/>
-
-        <activity android:name=".SplashActivity">
+        <activity android:name=".Activity.MainActivity"
+            tools:ignore="InnerclassSeparator" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".Activity.VideoActivity"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".Activity.LoginActivity"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".Activity.SignupActivity"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".Activity.SplashActivity"
+            tools:ignore="InnerclassSeparator">
+
         </activity>
 
     </application>

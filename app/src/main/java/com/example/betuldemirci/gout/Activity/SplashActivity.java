@@ -1,9 +1,11 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.betuldemirci.gout.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         //hide action bar
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getSupportActionBar().hide();
-        setContentView(R.layout.splash);
+        setContentView(R.layout.activity_splash);
 
         Thread timerThread = new Thread(){
             public void run(){

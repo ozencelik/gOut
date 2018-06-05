@@ -1,4 +1,4 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PastChallenge extends Fragment{
+import com.example.betuldemirci.gout.R;
 
-    public PastChallenge() {
+public class NewChallenge extends Fragment {
+
+    public NewChallenge(){
 
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.past_challenge, container, false);
+        View v = inflater.inflate(R.layout.new_challenge, container, false);
 
         return v;
     }

@@ -1,4 +1,4 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Fragments;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.betuldemirci.gout.R;
 
 import java.util.ArrayList;
 
@@ -124,10 +126,6 @@ public class HomeFragment extends Fragment{
 
 
         return v;
-    }
-
-    public void updateStep(int numberSteps){
-        stepCount.setText(numberSteps);
     }
 
 }

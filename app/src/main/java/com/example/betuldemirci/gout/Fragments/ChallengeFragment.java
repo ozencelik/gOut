@@ -1,25 +1,19 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Fragments;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import java.util.Objects;
-
-import static com.example.betuldemirci.gout.R.id.viewpager_id;
+import com.example.betuldemirci.gout.Adapters.ViewPagerAdapter;
+import com.example.betuldemirci.gout.R;
 
 
 public class ChallengeFragment extends Fragment {
