@@ -1,22 +1,19 @@
 package com.example.betuldemirci.gout.Fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.betuldemirci.gout.Adapters.ChallengeFragmentAdapter;
-import com.example.betuldemirci.gout.Adapters.ViewPagerAdapter;
 import com.example.betuldemirci.gout.R;
-
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 
 public class ChallengeFragment extends Fragment {
@@ -30,12 +27,24 @@ public class ChallengeFragment extends Fragment {
     private String mParam2;
 
     private View v;
-
-    private TabLayout tablayout;
-    private ViewPager viewpager;
-    private ViewPagerAdapter adapter;
-
     private OnFragmentInteractionListener mListener;
+
+
+    private String[] asiaCountries = {"Vietnam", "China", "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"};
+    private String[] europeCountries = {"France", "Germany", "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"};
+
+    private int[] aImg = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d};
+    private int[] bImg = {R.drawable.a, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c};
+
+    private RecyclerView mNewRecyclerView, mPastRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    LinearLayoutManager layoutManager;
+    private static String LOG_TAG = "Multi_RecyclerView";
+
+
+    FloatingActionMenu materialDesignFAM;
+    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4;
 
     public ChallengeFragment() {
 
@@ -62,27 +71,63 @@ public class ChallengeFragment extends Fragment {
     }
 
 
-    @SuppressLint("ResourceType")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_challenge, container, false);
 
-        tablayout = v.findViewById(R.id.tablayout_id);
-        viewpager = v.findViewById(R.id.viewpager_id);
-        adapter = new ViewPagerAdapter(getChildFragmentManager());
+        mNewRecyclerView = v.findViewById(R.id.new_challenges);
+        mPastRecyclerView = v.findViewById(R.id.past_challenges);
 
-        //Add Fragment
-        adapter.AddFragment(new PastChallenge(), "Past");
-        adapter.AddFragment(new NewChallenge(), "New");
+        //create and set layout manager for each RecyclerView
+        RecyclerView.LayoutManager firstLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager secondLayoutManager = new LinearLayoutManager(getActivity());
+
+        mNewRecyclerView.setLayoutManager(firstLayoutManager);
+        mPastRecyclerView.setLayoutManager(secondLayoutManager);
+
+        //Initializing and set adapter for each RecyclerView
+        ChallengeFragmentAdapter firstAdapter = new ChallengeFragmentAdapter(getActivity(), asiaCountries, aImg);
+        ChallengeFragmentAdapter secondAdapter = new ChallengeFragmentAdapter(getActivity(), europeCountries, bImg);
+
+        mNewRecyclerView.setAdapter(firstAdapter);
+        mPastRecyclerView.setAdapter(secondAdapter);
 
 
-        viewpager.setAdapter(adapter);
-        viewpager.setOffscreenPageLimit(2);
-        tablayout.setupWithViewPager(viewpager);
+        mNewRecyclerView.setNestedScrollingEnabled(false);
+        mPastRecyclerView.setNestedScrollingEnabled(false);
 
-        tablayout.getTabAt(0).setIcon(R.drawable.past);
-        tablayout.getTabAt(1).setIcon(R.drawable.future);
+
+        materialDesignFAM = v.findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = v.findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton2 =  v.findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 =  v.findViewById(R.id.material_design_floating_action_menu_item3);
+        floatingActionButton4 = v.findViewById(R.id.material_design_floating_action_menu_item4);
+
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu first item clicked
+                //untuk aksi ketika di klik
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
 
         return v;
     }

@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.example.betuldemirci.gout.Fragments.ChallengeFragment;
 import com.example.betuldemirci.gout.Fragments.HomeFragment;
-import com.example.betuldemirci.gout.Fragments.NewHomeFragment;
 import com.example.betuldemirci.gout.Pedometer.StepDetector;
 import com.example.betuldemirci.gout.Pedometer.StepListener;
 import com.example.betuldemirci.gout.Fragments.ProfileFragment;
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     static double distance;
 
 
-    private NewHomeFragment mHomeFragment;
+    private HomeFragment mHomeFragment;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             transaction = manager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    transaction.replace(R.id.container, new NewHomeFragment()).commit();
+                    transaction.replace(R.id.container, new HomeFragment()).commit();
                     return true;
                 case R.id.navigation_challenge:
                     transaction.replace(R.id.container, new ChallengeFragment()).commit();
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
 
-        mHomeFragment = new NewHomeFragment();
+        mHomeFragment = new HomeFragment();
 
         transaction.replace(R.id.container, mHomeFragment).commit();
 

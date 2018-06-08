@@ -20,10 +20,10 @@ android {
         main {
             res.srcDirs =
                     [
-                            'src/main/res/layout/ActivityLayout',
-                            'src/main/res/layout/CardViews',
-                            'src/main/res/layout/FragmentLayout',
-                            'src/main/res/layout',
+                            'src/main/res/layouts/ActivityLayout',
+                            'src/main/res/layouts/CardViews',
+                            'src/main/res/layouts/FragmentLayout',
+                            'src/main/res/layouts',
                             'src/main/res'
                     ]
         }
@@ -47,6 +47,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.1'
 
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    implementation 'com.github.clans:fab:1.6.4'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

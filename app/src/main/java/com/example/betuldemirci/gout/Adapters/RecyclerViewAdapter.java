@@ -1,13 +1,10 @@
 package com.example.betuldemirci.gout.Adapters;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.betuldemirci.gout.Fragments.NewHomeFragment;
+import com.example.betuldemirci.gout.Fragments.HomeFragment;
 import com.example.betuldemirci.gout.Model;
 import com.example.betuldemirci.gout.R;
 
@@ -28,7 +25,7 @@ import nl.dionsegijn.steppertouch.StepperTouch;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    private NewHomeFragment mNew = new NewHomeFragment();
+    private HomeFragment mNew = new HomeFragment();
 
 
     private Activity mActivity;
@@ -130,8 +127,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_water_view, parent, false);
                 return new WaterTypeViewHolder(view);
             case Model.WEIGHT_TYPE:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_deneme, parent, false);
-                return new WeightTypeViewHolder(view);
+                //view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_deneme, parent, false);
+                //return new WeightTypeViewHolder(view);
+                break;
         }
         return null;
     }

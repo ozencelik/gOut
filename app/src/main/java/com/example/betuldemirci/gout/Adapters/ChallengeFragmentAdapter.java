@@ -1,96 +1,65 @@
 package com.example.betuldemirci.gout.Adapters;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.betuldemirci.gout.Contact;
 import com.example.betuldemirci.gout.R;
 
-import java.util.List;
+import java.util.ArrayList;
+
+public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFragmentAdapter.ViewHolder> {
+
+    private Activity activity;
+    private String[] strings;
 
 
-public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFragmentAdapter.MyViewHolder> {
+    private int[] images;
 
-    Context mContext;
-    List<Contact> mData;
-    Dialog mDialog;
-
-    public ChallengeFragmentAdapter(Context mContext, List<Contact> mData) {
-        this.mContext = mContext;
-        this.mData = mData;
+    public ChallengeFragmentAdapter(Activity activity, String[] strings, int[] images) {
+        this.activity = activity;
+        this.strings = strings;
+        this.images = images;
     }
+
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v;
-        v = LayoutInflater.from(mContext).inflate(R.layout.item_contact, parent, false);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = activity.getLayoutInflater();
+        View view = inflater.inflate(R.layout.item_challenge_cards, parent, false);
 
-        final MyViewHolder vHolder = new MyViewHolder(v);
-
-        //Dialog Initialize
-        mDialog = new Dialog(mContext);
-        mDialog.setContentView(R.layout.dialog_contact);
-        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-
-
-        vHolder.item_contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView dialog_name_tv = mDialog.findViewById(R.id.dialog_name);
-                TextView dialog_phone_tv = mDialog.findViewById(R.id.dialog_phone);
-                ImageView dialog_contact_img = mDialog.findViewById(R.id.dialog_img);
-                dialog_name_tv.setText(mData.get(vHolder.getAdapterPosition()).getName());
-                dialog_phone_tv.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
-                dialog_contact_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getPhoto());
-
-                Toast.makeText(mContext, "Clicked "+String.valueOf(vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-                mDialog.show();
-            }
-        });
-        return vHolder;
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.textView.setText(strings[position]);
 
-        holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_phone.setText(mData.get(position).getPhone());
-        holder.img.setImageResource(mData.get(position).getPhoto());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
+        holder.mRec.setLayoutManager(mLayoutManager);
+        ChallengeCardAdapter mAdapter = new ChallengeCardAdapter(activity, images);
+        holder.mRec.setAdapter(mAdapter);
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return 8;//trings.length;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView textView;
+        private RecyclerView mRec;
 
-        private LinearLayout item_contact;
-        private TextView tv_name;
-        private TextView tv_phone;
-        private ImageView img;
-
-
-        public MyViewHolder(View itemView){
-            super(itemView);
-
-            item_contact = itemView.findViewById(R.id.contact_item);
-            tv_name = itemView.findViewById(R.id.name_contact);
-            tv_phone = itemView.findViewById(R.id.phone_contact);
-            img = itemView.findViewById(R.id.img_contact);
+        public ViewHolder(View view) {
+            super(view);
+            textView = view.findViewById(R.id.text);
+            mRec = view.findViewById(R.id.avatar_recyclerview);
         }
     }
 }
