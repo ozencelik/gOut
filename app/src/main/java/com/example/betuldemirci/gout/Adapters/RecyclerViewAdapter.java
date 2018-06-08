@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ import devlight.io.library.ArcProgressStackView;
 import me.itangqi.waveloadingview.WaveLoadingView;
 import nl.dionsegijn.steppertouch.StepperTouch;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     private NewHomeFragment mNew = new NewHomeFragment();
@@ -34,23 +35,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private ArrayList<Model> mDataSet;
     Context mContext;
     int TOTAL_TYPES;
+    private static final String TAG = "AGAGAGAGASGAGAGSFAN";
 
 
     public static class StackTypeViewHolder extends RecyclerView.ViewHolder {
         TextView dailyStep;
         TextView goalStep;
-        CardView cardView;
         ArcProgressStackView mArc;
-        ArrayList<ArcProgressStackView.Model>  mModels;
-
+        ArrayList<ArcProgressStackView.Model> mModels;
 
 
         public StackTypeViewHolder(View itemView) {
             super(itemView);
             this.dailyStep = itemView.findViewById(R.id.step_count);
             this.goalStep = itemView.findViewById(R.id.goal_step);
-            this.cardView = itemView.findViewById(R.id.stack_type);
-            this.mArc =  itemView.findViewById(R.id.apsv);
+            this.mArc = itemView.findViewById(R.id.apsv);
 
         }
 
@@ -101,16 +100,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         public WeightTypeViewHolder(View itemView) {
             super(itemView);
-
+/*
             this.mImage = itemView.findViewById(R.id.weightType);
             this.weightAmount = itemView.findViewById(R.id.weightAmount);
-            this.button = itemView.findViewById(R.id.button);
+            this.button = itemView.findViewById(R.id.button);*/
         }
 
     }
 
 
-    public RecyclerViewAdapter(ArrayList<Model> data, Context context){
+    public RecyclerViewAdapter(ArrayList<Model> data, Context context) {
         this.mDataSet = data;
         this.mContext = context;
         TOTAL_TYPES = mDataSet.size();
@@ -131,7 +130,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_water_view, parent, false);
                 return new WaterTypeViewHolder(view);
             case Model.WEIGHT_TYPE:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_weight_view, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_deneme, parent, false);
                 return new WeightTypeViewHolder(view);
         }
         return null;
@@ -164,16 +163,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             switch (object.type) {
                 case Model.STACK_TYPE:
 
-                    ((StackTypeViewHolder) holder).dailyStep.setText(String.valueOf(object.dailyStep)+"/");
-                    ((StackTypeViewHolder) holder).goalStep.setText(String.valueOf(object.goalStep));
+                    ((StackTypeViewHolder) holder).dailyStep.setText(String.valueOf((int) object.dailyStep) + "/");
+                    ((StackTypeViewHolder) holder).goalStep.setText(String.valueOf((int) object.goalStep));
 
+                    double a = (object.dailyStep / object.goalStep) * 100;
                     ((StackTypeViewHolder) holder).mModels = new ArrayList<>();
-                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Adım", ( object.dailyStep / object.goalStep ), Color.parseColor(mNew.bgColors[0]), Color.parseColor(mNew.mStartColors[0])));
-                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Kalori", object.calori, Color.parseColor(mNew.bgColors[1]), Color.parseColor(mNew.mStartColors[1])));
+                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Adım", (int) a, Color.parseColor(mNew.bgColors[0]), Color.parseColor(mNew.mStartColors[0])));
+                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Kalori", (int) object.calori, Color.parseColor(mNew.bgColors[1]), Color.parseColor(mNew.mStartColors[1])));
                     //        models.add(new ArcProgressStackView.Model("Stack", 75, Color.parseColor(bgColors[2]), Color.parseColor(mStartColors[2])));
                     //        models.add(new ArcProgressStackView.Model("View", 100, Color.parseColor(bgColors[3]), Color.parseColor(mStartColors[3])));
 
-                    ((StackTypeViewHolder) holder).mArc.setDrawWidthDimension(60*((StackTypeViewHolder) holder).mModels.size());
+                    ((StackTypeViewHolder) holder).mArc.setDrawWidthDimension(60 * ((StackTypeViewHolder) holder).mModels.size());
                     ((StackTypeViewHolder) holder).mArc.setModels(((StackTypeViewHolder) holder).mModels);
                     ((StackTypeViewHolder) holder).mArc.setIsShadowed(false);
                     ((StackTypeViewHolder) holder).mArc.setIsDragged(false);
@@ -193,7 +193,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     break;
                 case Model.WATER_TYPE:
 
-                    ((WaterTypeViewHolder) holder).mWave.setProgressValue((object.dailyWater / object.goalWater)*10);
+                    ((WaterTypeViewHolder) holder).mWave.setProgressValue((object.dailyWater / object.goalWater) * 10);
 
                     //((WaterTypeViewHolder) holder).typeNumber.setText(String.valueOf(object.goalWater));
                     //((WaterTypeViewHolder) holder).typeName.setText(object.waterType);
@@ -205,15 +205,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         @Override
                         public void onClick(View v) {
                             //Toast.makeText(getA(), "Water Num : "+((WaterTypeViewHolder) holder).mStepper.stepper.getValue(),Toast.LENGTH_SHORT).show();
-                            ((WaterTypeViewHolder) holder).mWave.setProgressValue((object.dailyWater / object.goalWater)*10);
+                            ((WaterTypeViewHolder) holder).mWave.setProgressValue((object.dailyWater / object.goalWater) * 10);
                         }
                     });
 
                     break;
                 case Model.WEIGHT_TYPE:
-
+/*
                     ((WeightTypeViewHolder) holder).mImage.setImageResource(object.imageWeight);
-                    ((WeightTypeViewHolder) holder).weightAmount.setText(String.valueOf(object.weight));
+                    ((WeightTypeViewHolder) holder).weightAmount.setText(String.valueOf(object.weight));*/
 
                     break;
             }

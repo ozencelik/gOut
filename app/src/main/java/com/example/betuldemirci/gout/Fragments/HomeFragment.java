@@ -19,8 +19,7 @@ import me.itangqi.waveloadingview.WaveLoadingView;
 import nl.dionsegijn.steppertouch.StepperTouch;
 
 
-
-public class HomeFragment extends Fragment{
+public class HomeFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -32,10 +31,10 @@ public class HomeFragment extends Fragment{
     private WaveLoadingView mWaveLoadingView;
     private StepperTouch mStepper;
 
-    private String []mStartColors;
-    private String []bgColors;
+    private String[] mStartColors;
+    private String[] bgColors;
 
-    private ArrayList<ArcProgressStackView.Model>  models;
+    private ArrayList<ArcProgressStackView.Model> models;
 
     private ArcProgressStackView arcProgressStackView;
     private Typeface typoRounded;
@@ -85,7 +84,7 @@ public class HomeFragment extends Fragment{
         //DEFINITIONS
         mStartColors = getResources().getStringArray(R.array.devlight);
         bgColors = getResources().getStringArray(R.array.medical_express);
-        typoRounded = Typeface.createFromAsset(v.getContext().getAssets(),  "fonts/typo grotesk rounded light demo.otf");
+        typoRounded = Typeface.createFromAsset(v.getContext().getAssets(), "fonts/typo grotesk rounded light demo.otf");
         mStepper = v.findViewById(R.id.stepperTouch);
         arcProgressStackView = v.findViewById(R.id.apsv);
         models = new ArrayList<>();
@@ -101,7 +100,7 @@ public class HomeFragment extends Fragment{
         mStepper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Water Num : "+mStepper.stepper.getValue(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Water Num : " + mStepper.stepper.getValue(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -111,7 +110,7 @@ public class HomeFragment extends Fragment{
 //        models.add(new ArcProgressStackView.Model("Stack", 75, Color.parseColor(bgColors[2]), Color.parseColor(mStartColors[2])));
 //        models.add(new ArcProgressStackView.Model("View", 100, Color.parseColor(bgColors[3]), Color.parseColor(mStartColors[3])));
 
-        arcProgressStackView.setDrawWidthDimension(60*models.size());
+        arcProgressStackView.setDrawWidthDimension(60 * models.size());
         arcProgressStackView.setModels(models);
         arcProgressStackView.setIsShadowed(false);
         arcProgressStackView.setIsDragged(false);
@@ -122,7 +121,6 @@ public class HomeFragment extends Fragment{
                 arcProgressStackView.animate();
             }
         });
-
 
 
         return v;

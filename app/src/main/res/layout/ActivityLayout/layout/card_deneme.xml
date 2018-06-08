@@ -47,6 +47,15 @@
                 android:text="10"
                 android:textSize="30sp"
                 android:textColor="@color/materail_blue" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="10"
+                android:textSize="30sp"
+                android:textColor="@color/materail_blue" />
 
             <TextView
                 android:id="@+id/goal_type"

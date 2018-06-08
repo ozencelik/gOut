@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         CaloriesBurned = stepsCount * conversationFactor;
         distance = (stepsCount * strip) / 100000;
 
-        Log.d(TAG, TEXT_NUM_STEPS + "Adım: "+stepsCount+" Mesafe: "+formatter.format(distance)+" Kalori: "+formatter.format(CaloriesBurned));
-        Toast.makeText(MainActivity.this, "Adım: "+stepsCount+" Mesafe: "+formatter.format(distance)+"km Kalori: "+formatter.format(CaloriesBurned), Toast.LENGTH_SHORT).show();
+        Log.d(TAG, TEXT_NUM_STEPS + "Adım: " + stepsCount + " Mesafe: " + formatter.format(distance) + " Kalori: " + formatter.format(CaloriesBurned));
+        Toast.makeText(MainActivity.this, "Adım: " + stepsCount + " Mesafe: " + formatter.format(distance) + "km Kalori: " + formatter.format(CaloriesBurned), Toast.LENGTH_SHORT).show();
         //mHomeFragment.updateStep(numSteps);
     }
 

@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/gout_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity"
-            tools:ignore="InnerclassSeparator" >
+        <activity
+            android:name=".Activity.MainActivity"
+            tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,16 +20,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activity.VideoActivity"
+        <activity
+            android:name=".Activity.VideoActivity"
             tools:ignore="InnerclassSeparator" />
 
-        <activity android:name=".Activity.LoginActivity"
+        <activity
+            android:name=".Activity.LoginActivity"
             tools:ignore="InnerclassSeparator" />
 
-        <activity android:name=".Activity.SignupActivity"
+        <activity
+            android:name=".Activity.SignupActivity"
             tools:ignore="InnerclassSeparator" />
 
-        <activity android:name=".Activity.SplashActivity"
+        <activity
+            android:name=".Activity.SplashActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>

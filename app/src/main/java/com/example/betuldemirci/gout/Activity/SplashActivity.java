@@ -1,4 +1,5 @@
 package com.example.betuldemirci.gout.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,20 +16,20 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //hide status bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //hide action bar
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash);
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
                     sleep(3000);
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
-                    Intent intent = new Intent(SplashActivity.this,VideoActivity.class);
+                } finally {
+                    Intent intent = new Intent(SplashActivity.this, VideoActivity.class);
                     startActivity(intent);
                 }
             }

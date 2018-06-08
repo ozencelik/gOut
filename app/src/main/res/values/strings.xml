@@ -5,4 +5,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="challenge">Challenge</string>
     <string name="profile">Profile</string>
+
+    <string name="action_past_challenge">past</string>
+    <string name="action_new_challenge">new</string>
+
 </resources>

@@ -4,16 +4,19 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.betuldemirci.gout.Adapters.ChallengeFragmentAdapter;
 import com.example.betuldemirci.gout.Adapters.ViewPagerAdapter;
 import com.example.betuldemirci.gout.R;
+
 
 
 public class ChallengeFragment extends Fragment {
@@ -31,9 +34,6 @@ public class ChallengeFragment extends Fragment {
     private TabLayout tablayout;
     private ViewPager viewpager;
     private ViewPagerAdapter adapter;
-
-    private final Handler handler = new Handler();
-    private Runnable runPager;
 
     private OnFragmentInteractionListener mListener;
 
@@ -54,11 +54,13 @@ public class ChallengeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     @SuppressLint("ResourceType")
     @Override
@@ -76,6 +78,7 @@ public class ChallengeFragment extends Fragment {
 
 
         viewpager.setAdapter(adapter);
+        viewpager.setOffscreenPageLimit(2);
         tablayout.setupWithViewPager(viewpager);
 
         tablayout.getTabAt(0).setIcon(R.drawable.past);
@@ -83,7 +86,6 @@ public class ChallengeFragment extends Fragment {
 
         return v;
     }
-
 
 
     public void onButtonPressed(Uri uri) {

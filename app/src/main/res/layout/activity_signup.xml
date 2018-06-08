@@ -22,17 +22,15 @@
             android:paddingRight="@dimen/three_margin"
             android:paddingTop="56dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="267dp"
                 android:layout_height="107dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/six_margin"
-                android:src="@mipmap/gout_logo"/>
-                <!--app:civ_border_color="#FF000000"-->
-                <!--app:civ_border_width="1dp" -->
-
+                android:src="@mipmap/gout_logo" />
+            <!--app:civ_border_color="#FF000000"-->
+            <!--app:civ_border_width="1dp" -->
 
 
             <!--  Name Label -->
