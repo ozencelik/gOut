@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_width="130dp"
+    android:layout_height="190dp"
+    android:layout_margin="@dimen/card_view_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/waveLoadingView"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:wlv_borderColor="@color/colorAccent"
+            app:wlv_borderWidth="0dp"
+            app:wlv_progressValue="60"
+            app:wlv_round_rectangle="true"
+            app:wlv_titleCenter=""
+            app:wlv_titleCenterColor="@android:color/white"
+            app:wlv_titleCenterSize="24sp"
+            app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"
+            app:wlv_titleCenterStrokeWidth="2dp"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="55"
+            app:wlv_waveColor="@color/materail_blue" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/goal_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="10"
+                android:textSize="30sp"
+                android:textColor="@color/materail_blue" />
+
+            <TextView
+                android:id="@+id/goal_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="glass"
+                android:textSize="10sp"
+                android:textColor="@color/materail_blue" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Water"
+            android:textSize="10sp"
+            android:layout_marginBottom="5dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <nl.dionsegijn.steppertouch.StepperTouch
+                android:id="@+id/stepperTouch"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:stepperBackgroundColor="@color/metal"
+                app:stepperButtonColor="@color/white"
+                app:stepperActionsColor="@color/materail_blue"
+                app:stepperActionsDisabledColor="@color/materail_blue"
+                app:stepperTextColor="@color/startBlue"
+                app:stepperTextSize="15sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
