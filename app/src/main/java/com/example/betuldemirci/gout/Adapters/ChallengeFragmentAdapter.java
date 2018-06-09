@@ -41,7 +41,9 @@ public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFrag
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textView.setText(strings[position]);
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
+        LinearLayoutManager mLayoutManager
+                = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
+        //RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
         holder.mRec.setLayoutManager(mLayoutManager);
         ChallengeCardAdapter mAdapter = new ChallengeCardAdapter(activity, images);
         holder.mRec.setAdapter(mAdapter);
@@ -49,7 +51,7 @@ public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFrag
 
     @Override
     public int getItemCount() {
-        return 8;//trings.length;
+        return strings.length;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

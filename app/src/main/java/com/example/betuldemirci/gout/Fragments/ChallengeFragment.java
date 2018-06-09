@@ -33,8 +33,10 @@ public class ChallengeFragment extends Fragment {
     private String[] asiaCountries = {"Vietnam", "China", "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"};
     private String[] europeCountries = {"France", "Germany", "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"};
 
-    private int[] aImg = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d};
-    private int[] bImg = {R.drawable.a, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c};
+    private int[] aImg = {R.drawable.ab, R.drawable.b, R.drawable.c, R.drawable.d};
+    private int[] bImg = {R.drawable.ab, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c,
+            R.drawable.ab, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c,
+            R.drawable.a, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c};
 
     private RecyclerView mNewRecyclerView, mPastRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -77,22 +79,19 @@ public class ChallengeFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_challenge, container, false);
 
         mNewRecyclerView = v.findViewById(R.id.new_challenges);
-        mPastRecyclerView = v.findViewById(R.id.past_challenges);
-
-        //create and set layout manager for each RecyclerView
         RecyclerView.LayoutManager firstLayoutManager = new LinearLayoutManager(getActivity());
-        RecyclerView.LayoutManager secondLayoutManager = new LinearLayoutManager(getActivity());
-
         mNewRecyclerView.setLayoutManager(firstLayoutManager);
-        mPastRecyclerView.setLayoutManager(secondLayoutManager);
-
-        //Initializing and set adapter for each RecyclerView
         ChallengeFragmentAdapter firstAdapter = new ChallengeFragmentAdapter(getActivity(), asiaCountries, aImg);
-        ChallengeFragmentAdapter secondAdapter = new ChallengeFragmentAdapter(getActivity(), europeCountries, bImg);
-
         mNewRecyclerView.setAdapter(firstAdapter);
-        mPastRecyclerView.setAdapter(secondAdapter);
+        mNewRecyclerView.setHasFixedSize(true);
 
+
+        mPastRecyclerView = v.findViewById(R.id.past_challenges);
+        RecyclerView.LayoutManager secondLayoutManager = new LinearLayoutManager(getActivity());
+        mPastRecyclerView.setLayoutManager(secondLayoutManager);
+        ChallengeFragmentAdapter secondAdapter = new ChallengeFragmentAdapter(getActivity(), europeCountries, bImg);
+        mPastRecyclerView.setAdapter(secondAdapter);
+        mPastRecyclerView.setHasFixedSize(true);
 
         mNewRecyclerView.setNestedScrollingEnabled(false);
         mPastRecyclerView.setNestedScrollingEnabled(false);
