@@ -81,7 +81,7 @@ public class ChallengeFragment extends Fragment {
         mNewRecyclerView = v.findViewById(R.id.new_challenges);
         RecyclerView.LayoutManager firstLayoutManager = new LinearLayoutManager(getActivity());
         mNewRecyclerView.setLayoutManager(firstLayoutManager);
-        ChallengeFragmentAdapter firstAdapter = new ChallengeFragmentAdapter(getActivity(), asiaCountries, aImg);
+        ChallengeFragmentAdapter firstAdapter = new ChallengeFragmentAdapter(getActivity(),getContext(), asiaCountries, aImg);
         mNewRecyclerView.setAdapter(firstAdapter);
         mNewRecyclerView.setHasFixedSize(true);
 
@@ -89,7 +89,7 @@ public class ChallengeFragment extends Fragment {
         mPastRecyclerView = v.findViewById(R.id.past_challenges);
         RecyclerView.LayoutManager secondLayoutManager = new LinearLayoutManager(getActivity());
         mPastRecyclerView.setLayoutManager(secondLayoutManager);
-        ChallengeFragmentAdapter secondAdapter = new ChallengeFragmentAdapter(getActivity(), europeCountries, bImg);
+        ChallengeFragmentAdapter secondAdapter = new ChallengeFragmentAdapter(getActivity(), getContext(), europeCountries, bImg);
         mPastRecyclerView.setAdapter(secondAdapter);
         mPastRecyclerView.setHasFixedSize(true);
 

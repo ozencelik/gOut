@@ -1,12 +1,15 @@
 package com.example.betuldemirci.gout.Fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.example.betuldemirci.gout.R;
 
@@ -30,6 +33,7 @@ public class ProfileFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private ViewFlipper mViewFlipper;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -65,8 +69,30 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        int images[] = {R.drawable.bicycle, R.drawable.hop_woman, R.drawable.pist
+                , R.drawable.ski_man, R.drawable.running_man, R.drawable.man_with_foot};
+
+        mViewFlipper = v.findViewById(R.id.image_flipper);
+
+        for (int imageId : images) flipperImages(imageId);
+
+        return v;
+    }
+
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(getActivity());
+        imageView.setBackgroundResource(image);
+        //imageView.setImageResource(image);
+//        R.color.transparent_white
+        mViewFlipper.addView(imageView);
+        mViewFlipper.setFlipInterval(2000);
+        mViewFlipper.setAutoStart(true);
+
+        //Animation
+        mViewFlipper.setInAnimation(getActivity(), android.R.anim.slide_in_left);
+        mViewFlipper.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

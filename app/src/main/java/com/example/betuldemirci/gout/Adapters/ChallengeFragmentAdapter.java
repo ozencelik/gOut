@@ -1,6 +1,7 @@
 package com.example.betuldemirci.gout.Adapters;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,14 +18,16 @@ public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFrag
 
     private Activity activity;
     private String[] strings;
+    private Context mContext;
 
 
     private int[] images;
 
-    public ChallengeFragmentAdapter(Activity activity, String[] strings, int[] images) {
+    public ChallengeFragmentAdapter(Activity activity, Context context, String[] strings, int[] images) {
         this.activity = activity;
         this.strings = strings;
         this.images = images;
+        this.mContext = context;
     }
 
 
@@ -45,7 +48,7 @@ public class ChallengeFragmentAdapter extends RecyclerView.Adapter<ChallengeFrag
                 = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);
         //RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
         holder.mRec.setLayoutManager(mLayoutManager);
-        ChallengeCardAdapter mAdapter = new ChallengeCardAdapter(activity, images);
+        ChallengeCardAdapter mAdapter = new ChallengeCardAdapter(activity, mContext, images);
         holder.mRec.setAdapter(mAdapter);
     }
 
