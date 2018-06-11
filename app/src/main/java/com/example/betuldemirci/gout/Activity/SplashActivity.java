@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.example.betuldemirci.gout.R;
 
 public class SplashActivity extends AppCompatActivity {
+
+    Thread splashTread;
+    ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,11 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_splash);
 
+
+        mImageView = findViewById(R.id.gout);
+        mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
+
         Thread timerThread = new Thread() {
             public void run() {
                 try {
@@ -31,6 +40,7 @@ public class SplashActivity extends AppCompatActivity {
                 } finally {
                     Intent intent = new Intent(SplashActivity.this, VideoActivity.class);
                     startActivity(intent);
+                    //SplashActivity.this.finish();
                 }
             }
         };
