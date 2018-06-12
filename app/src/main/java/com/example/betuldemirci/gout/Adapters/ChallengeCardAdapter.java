@@ -11,8 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +45,8 @@ public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdap
         mDialog = new Dialog(mContext);
         mDialog.setContentView(R.layout.dialog_challenge_card);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.setCancelable(true);
+
 
         vHolder.mCircleImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdap
                 dialog_contact_img.setImageResource(images[vHolder.getAdapterPosition()]);
 
 
-                Toast.makeText(mContext, "Clicked "+String.valueOf(vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Clicked "+String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
                 mDialog.show();
             }
         });
