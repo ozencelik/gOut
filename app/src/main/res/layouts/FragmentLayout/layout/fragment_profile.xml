@@ -124,35 +124,6 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/checkered_flag"
-                        android:layout_margin="5dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Aktivite Sayısı"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="125"
-                        android:textColor="@color/startBlue"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
                         android:src="@drawable/running_shoes"
                         android:layout_margin="5dp"/>
                     <TextView
@@ -195,6 +166,36 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="54.6 km"
+                        android:textColor="@color/startBlue"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/checkered_flag" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aktivite Sayısı"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="125"
                         android:textColor="@color/startBlue"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -315,16 +316,27 @@
             android:weightSum="2"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:text="Activity Level"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="Activity Level"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_info_black_24dp"
+                    android:layout_margin="10dp"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -335,6 +347,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
                 android:weightSum="3">
+
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -362,8 +375,8 @@
                             android:layout_height="wrap_content"
                             android:text="ACTIVE"
                             android:textSize="10sp"
-                            android:fontFamily="@fonts/typo grotesk rounded light demo.otf"
                             android:layout_gravity="center"/>
+                        <!--android:fontFamily="@fonts/typo_grotesk_rounded_light_demo.otf"-->
 
                         <ImageView
                             android:layout_width="30dp"
@@ -389,12 +402,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_info_black_24dp"
-                        android:layout_marginLeft="40dp"/>
-
-                    <ImageView
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:layout_marginBottom="5dp"
@@ -404,7 +411,6 @@
                         android:layout_height="wrap_content"
                         android:text="GOLEM"
                         android:textSize="10sp"
-                        android:fontFamily="@fonts/typo grotesk rounded light demo.otf"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -454,6 +460,450 @@
             </LinearLayout>
 
         </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/layout_background"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:weightSum="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:text="Personal Best"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_weight="1"/>
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="20dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:src="@drawable/ic_info_black_24dp"-->
+                        <!--android:layout_margin="10dp"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:weightSum="3">
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/step"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/step"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/step_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/steps_text"
+                                android:text="20325"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/steps_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="steps"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Most steps"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="110 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/chronometer"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/chronometer"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/chronometer_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/chronometer_text"
+                                android:text="166"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/chronometer_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="mins"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Longest duration"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/calori"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/burn"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/calori_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/calori_text"
+                                android:text="973"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/calori_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="cal"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Most calories burned"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="148 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:weightSum="3">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/distance"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/distance11"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/distance_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/distance_text"
+                                android:text="20.02"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/distance_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="km"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Longest distance"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="151 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/speedmeter"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/speedmeter"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/speedmeter_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/speedmeter_text"
+                                android:text="27.0"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/speedmeter_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="km/h"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fastest speed"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="148 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/personel_best_height">
+
+                            <ImageView
+                                android:id="@+id/elevation"
+                                android:layout_width="@dimen/personel_best_width"
+                                android:layout_height="@dimen/personel_best_height"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/elevation"
+                                android:foregroundGravity="center"
+                                android:padding="7dp" />
+
+                            <TextView
+                                android:id="@+id/elevation_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_above="@+id/elevation_text"
+                                android:text="218"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/elevation_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="55dp"
+                                android:text="m"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Highest elev. gain"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="108 days ago"
+                                android:textSize="10sp"
+                                android:layout_gravity="center"
+                                android:textColor="@color/iron"
+                                android:textStyle="italic"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
