@@ -1,6 +1,6 @@
-package com.example.betuldemirci.gout;
+package com.example.betuldemirci.gout.Model;
 
-public class Model {
+public class HomeFragmentModel {
 
     public static final int STACK_TYPE = 0;
     public static final int RUNNING_TYPE = 1;
@@ -17,7 +17,7 @@ public class Model {
     public double weight; // 80 kg Weight Type
 
 
-    public Model(int type, double dailyStep, double goalStep, double calori)// Stack Type
+    public HomeFragmentModel(int type, double dailyStep, double goalStep, double calori)// Stack Type
     {
         this.type = type;
         this.dailyStep = dailyStep;
@@ -25,14 +25,14 @@ public class Model {
         this.calori = calori;
     }
 
-    public Model(int type, int typeNumber, String typeName)// Running Type
+    public HomeFragmentModel(int type, int typeNumber, String typeName)// Running Type
     {
         this.type = type;
         this.typeNumber = typeNumber;
         this.typeName = typeName;
     }
 
-    public Model(int type, int dailyWater, int goalWater, String waterType)// Water Type
+    public HomeFragmentModel(int type, int dailyWater, int goalWater, String waterType)// Water Type
     {
         this.type = type;
         this.dailyWater = dailyWater;
@@ -40,7 +40,7 @@ public class Model {
         this.waterType = waterType;
     }
 
-    public Model(int type, int imageWeight, double weight)// Weight Type
+    public HomeFragmentModel(int type, int imageWeight, double weight)// Weight Type
     {
         this.type = type;
         this.imageWeight = imageWeight;

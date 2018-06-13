@@ -13,29 +13,29 @@
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator">
+        </activity>
+
+        <activity
+            android:name=".Activity.VideoActivity"
+            tools:ignore="InnerclassSeparator"/>
+
+        <activity
+            android:name=".Activity.LoginActivity"
+            tools:ignore="InnerclassSeparator"/>
+
+        <activity
+            android:name=".Activity.SignupActivity"
+            tools:ignore="InnerclassSeparator"/>
+
+        <activity
+            android:name=".Activity.SplashActivity"
+            tools:ignore="InnerclassSeparator"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".Activity.VideoActivity"
-            tools:ignore="InnerclassSeparator" />
-
-        <activity
-            android:name=".Activity.LoginActivity"
-            tools:ignore="InnerclassSeparator" />
-
-        <activity
-            android:name=".Activity.SignupActivity"
-            tools:ignore="InnerclassSeparator" />
-
-        <activity
-            android:name=".Activity.SplashActivity"
-            tools:ignore="InnerclassSeparator">
-
         </activity>
 
     </application>

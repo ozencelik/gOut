@@ -1,8 +1,5 @@
 package com.example.betuldemirci.gout.Activity;
 
-/**
- * Created by Betul Demirci on 3/4/2018.
- */
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,55 +13,95 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.betuldemirci.gout.Model.FirebaseUserInformation;
 import com.example.betuldemirci.gout.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class SignupActivity extends AppCompatActivity {
-    private static final String TAG = "SignupActivity";
 
-    EditText _nameText;
-    EditText _emailText;
-    EditText _passwordText;
-    Button _signupButton;
-    TextView _loginLink;
+    private static final String TAG = "SignupActivity";
+    private static final String CHILD_USER = "Users";
+
+    private EditText nameText, surnameText,emailText, passwordText;
+    private Button signupButton;
+    private TextView loginLink;
 
     private FirebaseAuth mAuth;
+    private String mUserId;
+    private DatabaseReference mDatabaseRef;
+    private FirebaseUserInformation mUserInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        nameText = findViewById(R.id.input_name);
+        surnameText = findViewById(R.id.input_surname);
+        emailText = findViewById(R.id.input_email);
+        passwordText = findViewById(R.id.input_password);
+        signupButton = findViewById(R.id.btn_signup);
+        loginLink = findViewById(R.id.link_login);
+    }
 
-        _nameText = findViewById(R.id.input_name);
-        _emailText = findViewById(R.id.input_email);
-        _passwordText = findViewById(R.id.input_password);
-        _signupButton = findViewById(R.id.btn_signup);
-        _loginLink = findViewById(R.id.link_login);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
 
         mAuth = FirebaseAuth.getInstance();
-
-
-        _signupButton.setOnClickListener(new View.OnClickListener() {
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signup();
             }
         });
-
-        _loginLink.setOnClickListener(new View.OnClickListener() {
+        loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Finish the registration screen and return to the Login activity
-                //finish();
-
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                //finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
     }
 
     public void signup() {
@@ -75,7 +112,7 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        _signupButton.setEnabled(false);
+        signupButton.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this,
                 R.style.AppTheme_Dark_Dialog);
@@ -83,26 +120,31 @@ public class SignupActivity extends AppCompatActivity {
         progressDialog.setMessage("Hesap Oluşturuluyor...");
         progressDialog.show();
 
-        String name = _nameText.getText().toString();
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        final String name = nameText.getText().toString();
+        final String surname = surnameText.getText().toString();
+        String email = emailText.getText().toString();
+        String password = passwordText.getText().toString();
 
         // TODO: Implement your own signup logic here.
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success");
-                    startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+
+                    mUserId = mAuth.getCurrentUser().getUid();
+                    mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_USER).child(mUserId);
+
+                    //mUserInfo = new FirebaseUserInformation(name, surname);
+                    mUserInfo = new FirebaseUserInformation("imageUrl", name, surname, "Male", "Professional", 96.5, 183, 22, 252, Calendar.getInstance().getTime());
+                    mDatabaseRef.setValue(mUserInfo);
+
+                    startActivity(new Intent(SignupActivity.this, MainActivity.class));
 
                 } else {
-                    // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
 
                 }
-
-                // ...
             }
         });
 
@@ -121,43 +163,42 @@ public class SignupActivity extends AppCompatActivity {
 
 
     public void onSignupSuccess() {
-        _signupButton.setEnabled(true);
+        signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
-        finish();
     }
 
     public void onSignupFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
-        _signupButton.setEnabled(true);
+        signupButton.setEnabled(true);
     }
 
     public boolean validate() {
         boolean valid = true;
 
-        String name = _nameText.getText().toString();
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        String name = nameText.getText().toString();
+        String email = emailText.getText().toString();
+        String password = passwordText.getText().toString();
 
         if (name.isEmpty() || name.length() < 3) {
-            _nameText.setError("at least 3 characters");
+            nameText.setError("at least 3 characters");
             valid = false;
         } else {
-            _nameText.setError(null);
+            nameText.setError(null);
         }
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+            emailText.setError("enter a valid email address");
             valid = false;
         } else {
-            _emailText.setError(null);
+            emailText.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+            passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            passwordText.setError(null);
         }
 
         return valid;

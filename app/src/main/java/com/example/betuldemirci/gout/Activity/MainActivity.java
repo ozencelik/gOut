@@ -11,6 +11,9 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     static double distance;
 
-
     private HomeFragment mHomeFragment;
 
 
@@ -83,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Progress Loading
+        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        setProgressBarIndeterminateVisibility(true);
+
         setContentView(R.layout.activity_main);
 
         mTextMessage = findViewById(R.id.message);
@@ -115,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onPause() {
         super.onPause();
         sensorManager.unregisterListener(MainActivity.this);
+        setProgressBarIndeterminateVisibility(false);
 
     }
 
@@ -153,6 +160,5 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Toast.makeText(MainActivity.this, "Adım: " + stepsCount + " Mesafe: " + formatter.format(distance) + "km Kalori: " + formatter.format(CaloriesBurned), Toast.LENGTH_SHORT).show();
         //mHomeFragment.updateStep(numSteps);
     }
-
 
 }
