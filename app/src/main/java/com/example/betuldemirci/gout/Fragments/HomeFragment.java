@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
         //DEFINITIONS
         mStartColors = getResources().getStringArray(R.array.devlight);
         bgColors = getResources().getStringArray(R.array.medical_express);
-        typoRounded = Typeface.createFromAsset(v.getContext().getAssets(), "fonts/typo grotesk rounded light demo.otf");
+        typoRounded = Typeface.createFromAsset(v.getContext().getAssets(), "fonts/typo_grotesk_rounded_light_demo.otf");
 
 
 

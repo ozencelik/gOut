@@ -1,7 +1,6 @@
 package com.example.betuldemirci.gout.Fragments;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -72,7 +71,7 @@ public class ProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
         int images[] = {R.drawable.bicycle, R.drawable.hop_woman, R.drawable.pist
-                , R.drawable.ski_man, R.drawable.running_man, R.drawable.man_with_foot};
+                , R.drawable.ski_man, R.drawable.running_man_woman, R.drawable.man_with_foot};
 
         mViewFlipper = v.findViewById(R.id.image_flipper);
 

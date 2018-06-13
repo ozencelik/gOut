@@ -8,6 +8,12 @@
 
     <dimen name="main_activity_margin_bottom">60dp</dimen>
 
+    <dimen name="button_border_width">110dp</dimen><!--Profile fragment button borders-->
+    <dimen name="button_border_height">35dp</dimen>
+
+    <dimen name="personel_best_width">90dp</dimen>
+    <dimen name="personel_best_height">90dp</dimen>
+
     <dimen name="width">420dp</dimen>
     <dimen name="height">270dp</dimen>
 
