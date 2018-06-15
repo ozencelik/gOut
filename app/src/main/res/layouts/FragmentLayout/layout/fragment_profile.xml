@@ -108,16 +108,16 @@
                 android:orientation="vertical"
                 android:layout_alignTop="@+id/main_linear_layout"
                 android:layout_alignParentEnd="true"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:layout_margin="10dp">
 
                 <ImageView
                     android:id="@+id/logout"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/logout"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
@@ -302,7 +302,7 @@
                     android:layout_gravity="center">
 
                     <Button
-                        android:id="@+id/height"
+                        android:id="@+id/weight"
                         android:layout_width="@dimen/button_border_width"
                         android:layout_height="@dimen/button_border_height"
                         android:layout_gravity="center"
@@ -314,7 +314,7 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"/>
                     <Button
-                        android:id="@+id/weight"
+                        android:id="@+id/height"
                         android:layout_width="@dimen/button_border_width"
                         android:layout_height="@dimen/button_border_height"
                         android:layout_gravity="center"

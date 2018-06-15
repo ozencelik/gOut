@@ -32,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private ArrayList<HomeFragmentModel> mDataSet;
     Context mContext;
     int TOTAL_TYPES;
-    private static final String TAG = "AGAGAGAGASGAGAGSFAN";
+    private static final String TAG = "RecyclerView Adapter";
 
 
     public static class StackTypeViewHolder extends RecyclerView.ViewHolder {

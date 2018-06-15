@@ -1,14 +1,9 @@
 package com.example.betuldemirci.gout.Fragments;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,8 +19,15 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.betuldemirci.gout.Activity.SplashActivity;
+import com.example.betuldemirci.gout.Model.FirebaseUserInformation;
 import com.example.betuldemirci.gout.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class ProfileFragment extends Fragment {
@@ -34,9 +36,19 @@ public class ProfileFragment extends Fragment {
 
     private ViewFlipper mViewFlipper;
     private ImageView logoutImage;
+    private TextView mUserName, mUserEmail;
+    private Button mSex, mWeight, mHeight;
 
     private int images[] = {R.drawable.bicycle, R.drawable.hop_woman, R.drawable.pist
             , R.drawable.ski_man, R.drawable.running_man_woman, R.drawable.man_with_foot};
+
+    private FirebaseDatabase mDatabase;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private DatabaseReference mDatabaseReference;
+    private FirebaseUser mUser;
+    private String mUserId;
+
 
 
     @Override
@@ -49,6 +61,8 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate");
+
+
     }
 
     @Override
@@ -59,6 +73,45 @@ public class ProfileFragment extends Fragment {
 
         logoutImage = v.findViewById(R.id.logout);
         mViewFlipper = v.findViewById(R.id.image_flipper);
+
+        mUserName = v.findViewById(R.id.user_name); mUserEmail = v.findViewById(R.id.user_email);
+        mSex = v.findViewById(R.id.gender); mWeight = v.findViewById(R.id.weight); mHeight = v.findViewById(R.id.height);
+
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance();
+        mDatabaseReference = mDatabase.getReference();
+
+        mUserId = mUser.getUid();
+
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    Toast.makeText(getContext(), ds.child(mUserId).getValue(FirebaseUserInformation.class).getmName(), Toast.LENGTH_SHORT).show();
+
+                    FirebaseUserInformation mUserInfo = new FirebaseUserInformation();
+
+                    mUserInfo.setmName(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmName());
+                    mUserInfo.setmSurname(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSurname());
+                    mUserInfo.setmSex(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSex());
+                    mUserInfo.setmWeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmWeight());
+                    mUserInfo.setmHeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmHeight());
+
+                    mUserName.setText(mUserInfo.getmName() + mUserInfo.getmSurname());
+                    mUserEmail.setText(mUser.getEmail());
+                    mSex.setText(mUserInfo.getmSex());
+                    mWeight.setText(String.valueOf(mUserInfo.getmWeight()));
+                    mHeight.setText(String.valueOf(mUserInfo.getmHeight()));
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         return v;
     }
@@ -74,6 +127,41 @@ public class ProfileFragment extends Fragment {
     public void onStart() {
         super.onStart();
         Log.i(TAG, "onStart");
+
+        mUserName.setText("b");
+        /*
+        mHelper.mDatabaseReference.child("Users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    FirebaseUserInformation mUserInfo = new FirebaseUserInformation();
+
+                    //Toast.makeText(getActivity(), "Data : "+ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmName(), Toast.LENGTH_SHORT).show();
+
+
+                    mUserInfo.setmName(ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmName());
+                    mUserInfo.setmSurname(ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmSurname());
+                    mUserInfo.setmSex(ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmSex());
+                    mUserInfo.setmWeight(ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmWeight());
+                    mUserInfo.setmHeight(ds.child(mHelper.getUserId()).getValue(FirebaseUserInformation.class).getmHeight());
+
+                    mUserName.setText(mUserInfo.getmName() + mUserInfo.getmSurname());
+                    mUserEmail.setText(mHelper.mUser.getEmail());
+
+                    //mHelper.mUser.getEmail();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
+
+
+
+        for(int i = 0; i < images.length; i++) flipperImages(images[i]);
+
         logoutImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

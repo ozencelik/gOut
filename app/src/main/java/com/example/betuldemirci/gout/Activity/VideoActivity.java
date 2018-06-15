@@ -70,7 +70,7 @@ public class VideoActivity extends AppCompatActivity {
         });
         mSignupButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(VideoActivity.this, SignupActivity.class));
+                startActivity(new Intent(VideoActivity.this, OnBoardingActivity.class));
                 finish();
             }
         });

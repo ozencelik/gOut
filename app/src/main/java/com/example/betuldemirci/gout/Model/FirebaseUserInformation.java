@@ -7,29 +7,41 @@ import java.util.Date;
 public class FirebaseUserInformation {
     private static final String SIMPLE_DATE_FORMAT = "dd-MMM-yyyy";
 
-    private String mImageUrl, mName, mSurname, mSex, mUserType, mBirthdayText;
-    private double mWeight, mHeight;
-    private int mAge, mFriendsNumber;
-    private Date mBirthday;
+    private String mImageUrl, mName, mSurname, mSex, mUserType, mBirthdayText, mGoalType;
+    private double mWeight, mGoalWeight, mHeight, mAge;
+    private int mFriendsNumber, mWeeksGoalWeight;
 
     private SimpleDateFormat  mDateFormat;
 
 
-    public FirebaseUserInformation(String mImageUrl, String mName, String mSurname, String mSex, String mUserType, double mWeight, double mHeight, int mAge, int mFriendsNumber, Date mBirthday) {
+    public FirebaseUserInformation(String mGoalType, int mWeeksGoalWeight, String mImageUrl, String mName,
+                                   String mSurname, String mSex, String mUserType, double mWeight,
+                                   double mGoalWeight, double mHeight, double mAge, int mFriendsNumber, Date mBirthday) {
+        this.mWeeksGoalWeight = mWeeksGoalWeight;
+        this.mGoalType = mGoalType;
         this.mImageUrl = mImageUrl;
         this.mName = mName;
         this.mSurname = mSurname;
         this.mSex = mSex;
         this.mUserType = mUserType;
         this.mWeight = mWeight;
+        this.mGoalWeight = mGoalWeight;
         this.mHeight = mHeight;
         this.mAge = mAge;
         this.mFriendsNumber = mFriendsNumber;
-        this.mBirthday = mBirthday;
         //this.mBirthday = Calendar.getInstance().getTime();
-
         mDateFormat = new SimpleDateFormat(SIMPLE_DATE_FORMAT);
-        mBirthdayText = mDateFormat.format(mBirthday);
+        this.mBirthdayText = mDateFormat.format(mBirthday);
+    }
+
+    public FirebaseUserInformation(){
+        mImageUrl = "";
+        mName = "";
+        mSurname = "";
+        mSex = "";
+        mUserType = "";
+        mBirthdayText = "";
+        mGoalType = "";
     }
 
     public FirebaseUserInformation(String name, String surname){
@@ -85,12 +97,28 @@ public class FirebaseUserInformation {
         this.mBirthdayText = mBirthdayText;
     }
 
+    public String getmGoalType() {
+        return mGoalType;
+    }
+
+    public void setmGoalType(String mGoalType) {
+        this.mGoalType = mGoalType;
+    }
+
     public double getmWeight() {
         return mWeight;
     }
 
     public void setmWeight(double mWeight) {
         this.mWeight = mWeight;
+    }
+
+    public double getmGoalWeight() {
+        return mGoalWeight;
+    }
+
+    public void setmGoalWeight(double mGoalWeight) {
+        this.mGoalWeight = mGoalWeight;
     }
 
     public double getmHeight() {
@@ -101,11 +129,11 @@ public class FirebaseUserInformation {
         this.mHeight = mHeight;
     }
 
-    public int getmAge() {
+    public double getmAge() {
         return mAge;
     }
 
-    public void setmAge(int mAge) {
+    public void setmAge(double mAge) {
         this.mAge = mAge;
     }
 
@@ -117,11 +145,11 @@ public class FirebaseUserInformation {
         this.mFriendsNumber = mFriendsNumber;
     }
 
-    public Date getmBirthday() {
-        return mBirthday;
+    public int getmWeeksGoalWeight() {
+        return mWeeksGoalWeight;
     }
 
-    public void setmBirthday(Date mBirthday) {
-        this.mBirthday = mBirthday;
+    public void setmWeeksGoalWeight(int mWeeksGoalWeight) {
+        this.mWeeksGoalWeight = mWeeksGoalWeight;
     }
 }

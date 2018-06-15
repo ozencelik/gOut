@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betuldemirci.gout.Model.FirebaseUserInformation;
+import com.example.betuldemirci.gout.Model.OnBoardingModel;
 import com.example.betuldemirci.gout.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,6 +31,8 @@ public class SignupActivity extends AppCompatActivity {
 
     private static final String TAG = "SignupActivity";
     private static final String CHILD_USER = "Users";
+
+    private OnBoardingModel mOn = new OnBoardingModel();
 
     private EditText nameText, surnameText,emailText, passwordText;
     private Button signupButton;
@@ -136,7 +139,8 @@ public class SignupActivity extends AppCompatActivity {
                     mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_USER).child(mUserId);
 
                     //mUserInfo = new FirebaseUserInformation(name, surname);
-                    mUserInfo = new FirebaseUserInformation("imageUrl", name, surname, "Male", "Professional", 96.5, 183, 22, 252, Calendar.getInstance().getTime());
+                    mUserInfo = new FirebaseUserInformation(mOn.getmGoalType(), mOn.getmWeeksGoalWeight(), "imageUrl", name, surname, mOn.getmSexType()
+                            , "Prof.", mOn.getmCurrentWeight(), mOn.getmGoalWeight(), mOn.getmHeight(), mOn.getmAge(), 0, Calendar.getInstance().getTime());
                     mDatabaseRef.setValue(mUserInfo);
 
                     startActivity(new Intent(SignupActivity.this, MainActivity.class));

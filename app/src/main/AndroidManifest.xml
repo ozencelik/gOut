@@ -16,6 +16,13 @@
         </activity>
 
         <activity
+            android:name=".Activity.OnBoardingActivity"
+            tools:ignore="InnerclassSeparator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity
             android:name=".Activity.VideoActivity"
             tools:ignore="InnerclassSeparator"/>
 

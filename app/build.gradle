@@ -44,6 +44,8 @@ dependencies {
     implementation 'devlight.io:arcprogressstackview:1.0.4'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.clans:fab:1.6.4'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.12'
+    implementation 'com.github.rey5137:material:1.2.4'
 
     implementation 'com.google.firebase:firebase-core:16.0.0'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
