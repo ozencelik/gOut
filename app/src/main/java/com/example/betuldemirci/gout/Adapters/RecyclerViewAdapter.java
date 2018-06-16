@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.betuldemirci.gout.Fragments.HomeFragment;
-import com.example.betuldemirci.gout.Model;
+import com.example.betuldemirci.gout.Model.HomeFragmentModel;
 import com.example.betuldemirci.gout.R;
 
 import java.util.ArrayList;
@@ -29,10 +29,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
 
     private Activity mActivity;
-    private ArrayList<Model> mDataSet;
+    private ArrayList<HomeFragmentModel> mDataSet;
     Context mContext;
     int TOTAL_TYPES;
-    private static final String TAG = "AGAGAGAGASGAGAGSFAN";
+    private static final String TAG = "RecyclerView Adapter";
 
 
     public static class StackTypeViewHolder extends RecyclerView.ViewHolder {
@@ -106,7 +106,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
 
-    public RecyclerViewAdapter(ArrayList<Model> data, Context context) {
+    public RecyclerViewAdapter(ArrayList<HomeFragmentModel> data, Context context) {
         this.mDataSet = data;
         this.mContext = context;
         TOTAL_TYPES = mDataSet.size();
@@ -117,16 +117,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         switch (viewType) {
-            case Model.STACK_TYPE:
+            case HomeFragmentModel.STACK_TYPE:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_stack_view, parent, false);
                 return new StackTypeViewHolder(view);
-            case Model.RUNNING_TYPE:
+            case HomeFragmentModel.RUNNING_TYPE:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_running_view, parent, false);
                 return new RunningTypeViewHolder(view);
-            case Model.WATER_TYPE:
+            case HomeFragmentModel.WATER_TYPE:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_water_view, parent, false);
                 return new WaterTypeViewHolder(view);
-            case Model.WEIGHT_TYPE:
+            case HomeFragmentModel.WEIGHT_TYPE:
                 //view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_deneme, parent, false);
                 //return new WeightTypeViewHolder(view);
                 break;
@@ -139,13 +139,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         switch (mDataSet.get(position).type) {
             case 0:
-                return Model.STACK_TYPE;
+                return HomeFragmentModel.STACK_TYPE;
             case 1:
-                return Model.RUNNING_TYPE;
+                return HomeFragmentModel.RUNNING_TYPE;
             case 2:
-                return Model.WATER_TYPE;
+                return HomeFragmentModel.WATER_TYPE;
             case 3:
-                return Model.WEIGHT_TYPE;
+                return HomeFragmentModel.WEIGHT_TYPE;
             default:
                 return -1;
         }
@@ -156,10 +156,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
 
-        final Model object = mDataSet.get(position);
+        final HomeFragmentModel object = mDataSet.get(position);
         if (object != null) {
             switch (object.type) {
-                case Model.STACK_TYPE:
+                case HomeFragmentModel.STACK_TYPE:
 
                     ((StackTypeViewHolder) holder).dailyStep.setText(String.valueOf((int) object.dailyStep) + "/");
                     ((StackTypeViewHolder) holder).goalStep.setText(String.valueOf((int) object.goalStep));
@@ -184,12 +184,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     });
 
                     break;
-                case Model.RUNNING_TYPE:
+                case HomeFragmentModel.RUNNING_TYPE:
 
                     ((RunningTypeViewHolder) holder).minsNumber.setText(String.valueOf(object.typeNumber));
                     ((RunningTypeViewHolder) holder).timeType.setText(object.typeName);
                     break;
-                case Model.WATER_TYPE:
+                case HomeFragmentModel.WATER_TYPE:
 
                     ((WaterTypeViewHolder) holder).mWave.setProgressValue((object.dailyWater / object.goalWater) * 10);
 
@@ -208,7 +208,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     });
 
                     break;
-                case Model.WEIGHT_TYPE:
+                case HomeFragmentModel.WEIGHT_TYPE:
 /*
                     ((WeightTypeViewHolder) holder).mImage.setImageResource(object.imageWeight);
                     ((WeightTypeViewHolder) holder).weightAmount.setText(String.valueOf(object.weight));*/

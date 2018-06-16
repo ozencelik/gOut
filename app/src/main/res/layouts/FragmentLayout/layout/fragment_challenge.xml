@@ -20,16 +20,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
-                    android:background="@color/jet"
-                    android:layout_margin="10dp" />
+                    android:layout_margin="10dp"
+                    android:background="@color/jet" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -38,11 +41,12 @@
                     android:text="New Challenge"
                     android:textSize="15sp"
                     android:textStyle="bold" />
+
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
-                    android:background="@color/jet"
-                    android:layout_margin="10dp" />
+                    android:layout_margin="10dp"
+                    android:background="@color/jet" />
             </LinearLayout>
 
 
@@ -54,14 +58,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/activity_horizontal_margin">
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
-                    android:background="@color/jet"
-                    android:layout_margin="10dp" />
+                    android:layout_margin="10dp"
+                    android:background="@color/jet" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,11 +76,12 @@
                     android:text="Past Challenge"
                     android:textSize="15sp"
                     android:textStyle="bold" />
+
                 <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
-                    android:background="@color/jet"
-                    android:layout_margin="10dp" />
+                    android:layout_margin="10dp"
+                    android:background="@color/jet" />
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView

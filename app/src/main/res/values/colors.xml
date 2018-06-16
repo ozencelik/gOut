@@ -46,6 +46,7 @@
     <color name="materail_white">#FFF8F8F8</color>
     <color name="materail_red">#FFFF3B30</color>
     <color name="materail_brown">#FFA2845E</color>
+    <color name="materail_black">#FF232323</color>
 
     <!--For textview shadow-->
     <color name="light_font">#FBFBFB</color>
