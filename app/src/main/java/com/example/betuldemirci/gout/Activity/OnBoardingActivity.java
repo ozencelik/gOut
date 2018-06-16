@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 import com.example.betuldemirci.gout.Adapters.OnBoardingSliderAdapter;
 import com.example.betuldemirci.gout.R;
 
-public class OnBoardingActivity extends FragmentActivity {
+public class OnBoardingActivity extends AppCompatActivity {
 
     public static ViewPager mSliderViewPager;
     private OnBoardingSliderAdapter mSliderAdapter;

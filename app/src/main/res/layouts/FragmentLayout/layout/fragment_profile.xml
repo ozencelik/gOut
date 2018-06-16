@@ -55,18 +55,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Betül Demirci"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginTop="40dp"/>
-                <!--android:text="☺ Hıştık Paşası ♥"-->
 
                 <TextView
                     android:id="@+id/user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="betul.demirci@ceng.deu.edu.tr"
                     android:textColor="@color/aluminum"
                     android:textSize="13sp"
                     android:layout_gravity="center"
@@ -75,7 +72,20 @@
 
             </LinearLayout>
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <!--<ImageView-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--android:id="@+id/profile_image"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginTop="120dp"-->
+                <!--android:clickable="true"-->
+                <!--android:foreground="?android:attr/selectableItemBackground"-->
+                <!--android:background="@drawable/add_user"/>-->
+        <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="100dp"
@@ -87,7 +97,7 @@
                 android:layout_marginTop="120dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:src="@drawable/ab"
+                android:background="@drawable/add_user"
                 app:civ_border_color="#FF000000"
                 app:civ_border_width="0dp" />
 
@@ -275,8 +285,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/button_border_red"
                         android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:text="Male" />
+                        android:foreground="?android:attr/selectableItemBackground" />
                     <Button
                         android:id="@+id/birthday"
                         android:layout_width="@dimen/button_border_width"
@@ -285,7 +294,6 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginLeft="10dp"
                         android:background="@drawable/button_border_green"
-                        android:text="11/13/1996"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"/>
@@ -309,7 +317,6 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/button_border_brown"
-                        android:text="90.3 kg"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"/>
@@ -321,7 +328,6 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginLeft="10dp"
                         android:background="@drawable/button_border_blue"
-                        android:text="183.2cm"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"/>
