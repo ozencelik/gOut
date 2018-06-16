@@ -75,7 +75,7 @@ public class ProfileFragment extends Fragment {
     private String mUserId;
 
     private FirebaseStorage mStorage;
-    private StorageReference mStorageReference;
+    private StorageReference mStorageReference, REFERENCE;
     private Uri mFilePath;
 
     private StorageTask mStorageTask;
@@ -152,6 +152,8 @@ public class ProfileFragment extends Fragment {
                     mHeight.setText(String.valueOf(mUserInfo.getmHeight()) + " cm");
                     mBirthday.setText(String.valueOf(mUserInfo.getmAge()) + " years old");
                     mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));
+
+
 
                     mStorageReference.child(mUserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
@@ -261,18 +263,18 @@ public class ProfileFragment extends Fragment {
         if(mFilePath != null){
 
             final ProgressDialog mDialog = new ProgressDialog(getActivity());
-            //mDialog.setTitle("Uploading...");
+            mDialog.setTitle("Uploading...");
             mDialog.show();
 
-            //REFERENCE = mStorageReference.child(mUserId);
+            REFERENCE = mStorageReference.child(mUserId);
 
-            mStorageReference = mStorageReference.child(mUserId);
+            //mStorageReference = mStorageReference.child(mUserId);
 
-            mStorageTask = mStorageReference.putFile(mFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            mStorageTask = REFERENCE.putFile(mFilePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    mStorageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    REFERENCE.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             Uri downloadUrl = uri;
