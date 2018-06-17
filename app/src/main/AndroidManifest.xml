@@ -62,7 +62,7 @@
             android:exported="true"
             android:label="RestartServiceWhenStopped">
             <intent-filter>
-                <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor"/>
+                <action android:name="com.example.betuldemirci.gout.Pedometer.RestartSensor"/>
             </intent-filter>
         </receiver>
 
