@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.betuldemirci.gout.Activity.MainActivity;
 import com.example.betuldemirci.gout.Adapters.ChallengeFragmentAdapter;
 import com.example.betuldemirci.gout.R;
 import com.github.clans.fab.FloatingActionButton;
@@ -23,8 +25,8 @@ public class ChallengeFragment extends Fragment {
 
     private View v;
 
-    private String[] asiaCountries = {"Vietnam", "China"/*, "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"*/};
-    private String[] europeCountries = {"France", "Germany"/*, "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"*/};
+    private String[] asiaCountries = {"Vietnam", "China", "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"};
+    private String[] europeCountries = {"France", "Germany", "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"};
 
     private int[] aImg = {R.drawable.ab, R.drawable.b, R.drawable.c, R.drawable.d};
     private int[] bImg = {R.drawable.ab, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c,
@@ -140,6 +142,7 @@ public class ChallengeFragment extends Fragment {
 
             }
         });
+
     }
 
     @Override

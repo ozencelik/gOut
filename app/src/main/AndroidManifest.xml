@@ -49,6 +49,23 @@
             </intent-filter>
         </activity>
 
+
+        <!--BACKGROUND PEDOMETER-->
+        <service
+            android:name="com.example.betuldemirci.gout.Pedometer.SensorService"
+            android:enabled="true" >
+        </service>
+
+        <receiver
+            android:name="com.example.betuldemirci.gout.Pedometer.SensorRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+                <action android:name="com.example.betuldemirci.gout.Pedometer.RestartSensor"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
