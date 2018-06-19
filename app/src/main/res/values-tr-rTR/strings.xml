@@ -2,8 +2,8 @@
     <string name="app_name" translatable="false">gOut</string>
 
     <!--VideoActivity-->
-    <string name="login_button">LogIn</string>
-    <string name="signup_button">SignUp</string>
+    <string name="login_button">Giriş Yap</string>
+    <string name="signup_button">Üye Ol</string>
 
     <!--HomeFragment-->
     <string name="step_counter">Step Counter</string>
