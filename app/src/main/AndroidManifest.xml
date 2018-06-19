@@ -15,6 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <provider
+            android:name="br.com.mauker.materialsearchview.db.HistoryProvider"
+            android:authorities="br.com.mauker.materialsearchview.searchhistorydatabase"
+            android:exported="false"
+            android:protectionLevel="signature"
+            android:syncable="true"/>
+
+
+        <activity
+            android:name=".Activity.ListFriendsToAddChallenge"
+            tools:ignore="InnerclassSeparator">
+        </activity>
+
+
         <activity
             android:name=".Activity.AddNewChallengeActivity"
             tools:ignore="InnerclassSeparator">
