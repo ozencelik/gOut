@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_background_add_new_challenge"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/challenge_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"
+            android:hint="Challenge Name"
+            android:textColorHint="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <RadioGroup
+                android:id="@+id/myRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text"
+                android:checkedButton="@+id/sound"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/individual"
+                    android:text="Individual C." />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/group"
+                    android:text="Group C." />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/date_picker"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="PickDate" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/personel_best_width"
+                        android:layout_height="@dimen/personel_best_height"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circle_shape_gray"
+                        android:foregroundGravity="center"
+                        android:padding="7dp"/>
+
+                    <TextView
+                        android:id="@+id/step_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20sp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:layout_above="@+id/steps_text"
+                        android:text="10000"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/personel_best_width"
+                        android:layout_height="@dimen/personel_best_height"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circle_shape_gray"
+                        android:foregroundGravity="center"
+                        android:padding="7dp"/>
+
+                    <TextView
+                        android:id="@+id/step_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20sp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_above="@+id/steps_text"
+                        android:text="35000"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/personel_best_width"
+                        android:layout_height="@dimen/personel_best_height"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circle_shape_gray"
+                        android:foregroundGravity="center"
+                        android:padding="7dp"/>
+
+                    <TextView
+                        android:id="@+id/step_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20sp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_above="@+id/steps_text"
+                        android:text="60000"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/personel_best_width"
+                        android:layout_height="@dimen/personel_best_height"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circle_shape_gray"
+                        android:foregroundGravity="center"
+                        android:padding="7dp" />
+
+                    <TextView
+                        android:id="@+id/step_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20sp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_above="@+id/steps_text"
+                        android:text="100000"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:background="@color/iron"
+            android:layout_gravity="center"/>
+
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Start"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:background="@color/deeppurple"
+            android:textColor="@color/metal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

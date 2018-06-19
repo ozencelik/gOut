@@ -14,6 +14,12 @@
         android:roundIcon="@mipmap/gout_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".Activity.AddNewChallengeActivity"
+            tools:ignore="InnerclassSeparator">
+        </activity>
+
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator">

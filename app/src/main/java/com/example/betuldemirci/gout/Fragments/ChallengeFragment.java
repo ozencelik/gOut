@@ -1,10 +1,18 @@
 package com.example.betuldemirci.gout.Fragments;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,21 +20,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.betuldemirci.gout.Activity.MainActivity;
+import com.example.betuldemirci.gout.Activity.AddNewChallengeActivity;
 import com.example.betuldemirci.gout.Adapters.ChallengeFragmentAdapter;
+import com.example.betuldemirci.gout.Model.Challenges;
 import com.example.betuldemirci.gout.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 
 public class ChallengeFragment extends Fragment {
 
     private static final String TAG = "CHALLENGE FRAGMENT :  ";
 
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
+    private int TOTAL_CHALLENGES_COUNTER;
+
     private View v;
 
-    private String[] asiaCountries = {"Vietnam", "China", "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"};
-    private String[] europeCountries = {"France", "Germany", "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"};
+    private String[] asiaCountries = {"Vietnam"/*, "China", "Japan", "Korea", "India", "Singapore", "Thailand", "Malaysia"*/};
+    private String[] europeCountries = {"France", "Germany"/*, "Sweden", "Denmark", "England", "Spain", "Portugal", "Norway"*/};
 
     private int[] aImg = {R.drawable.ab, R.drawable.b, R.drawable.c, R.drawable.d};
     private int[] bImg = {R.drawable.ab, R.drawable.d, R.drawable.e, R.drawable.e, R.drawable.b, R.drawable.c,
@@ -37,10 +52,18 @@ public class ChallengeFragment extends Fragment {
     private RecyclerView.LayoutManager mNewLayoutManager, mPastLayoutManager;
     private ChallengeFragmentAdapter mNewAdapter, mPastAdapter;
 
+    private static final String CHILD_CHALLENGES = "Challenges";
+    private FirebaseAuth mAuth;
+    private String mUserId;
+    private DatabaseReference mDatabaseRef;
+    private Challenges mNewChallenge;
+
     /////////////////////////////////
-    FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4;
+    private FloatingActionMenu mChallengeFam;
+    private FloatingActionButton mAddNewChallenge;
     /////////////////////////////////
+
+    private Dialog mDialog;
 
 
     @Override
@@ -65,6 +88,9 @@ public class ChallengeFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_challenge, container, false);
         Log.i(TAG, "onCreateView");
 
+        preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        editor = preferences.edit();
+
         mNewRecyclerView = v.findViewById(R.id.new_challenges);
         mNewLayoutManager = new LinearLayoutManager(getActivity());
         mNewRecyclerView.setLayoutManager(mNewLayoutManager);
@@ -74,15 +100,18 @@ public class ChallengeFragment extends Fragment {
         mPastLayoutManager = new LinearLayoutManager(getActivity());
         mPastRecyclerView.setLayoutManager(mPastLayoutManager);
 
-        materialDesignFAM = v.findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton1 = v.findViewById(R.id.material_design_floating_action_menu_item1);
-        floatingActionButton2 =  v.findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 =  v.findViewById(R.id.material_design_floating_action_menu_item3);
-        floatingActionButton4 = v.findViewById(R.id.material_design_floating_action_menu_item4);
+        mChallengeFam = v.findViewById(R.id.material_design_android_floating_action_menu);
+        mAddNewChallenge = v.findViewById(R.id.material_design_floating_action_menu_item1);
 
+        mNewChallenge = new Challenges();
 
+        mDialog = new Dialog(getContext());
+        mDialog.setContentView(R.layout.dialog_challenge_card);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.setCancelable(true);
         return v;
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -118,30 +147,52 @@ public class ChallengeFragment extends Fragment {
         mPastRecyclerView.setNestedScrollingEnabled(false);
 
 
-        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+        mAddNewChallenge.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //TODO something when floating action menu first item clicked
-                //untuk aksi ketika di klik
-            }
-        });
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu second item clicked
 
-            }
-        });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
+                startActivity(new Intent(getActivity(), AddNewChallengeActivity.class));
 
-            }
-        });
-        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
+                /*
 
+                TOTAL_CHALLENGES_COUNTER = preferences.getInt("TOTAL_CHALLENGES_COUNTER", 0);
+
+                mUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_CHALLENGES).child(String.valueOf(TOTAL_CHALLENGES_COUNTER++));
+
+                editor.putInt("TOTAL_CHALLENGES_COUNTER", TOTAL_CHALLENGES_COUNTER);
+                editor.commit();
+
+                mNewChallenge.setmChallengeName("ilk challenge");
+                mNewChallenge.setmAdminUserId(mUserId);
+
+                ArrayList<String> mChallengesAllUsersId = new ArrayList<>();
+                mChallengesAllUsersId.add("QBMNbxw155gxCEQRNJVWNwCO3b13");
+
+                mNewChallenge.setmAllUsersId(mChallengesAllUsersId);
+
+
+                mDatabaseRef.setValue(mNewChallenge);
+                */
             }
         });
+//        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                //TODO something when floating action menu second item clicked
+//
+//            }
+//        });
+//        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                //TODO something when floating action menu third item clicked
+//
+//            }
+//        });
+//        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                //TODO something when floating action menu third item clicked
+//
+//            }
+//        });
 
     }
 
@@ -168,4 +219,5 @@ public class ChallengeFragment extends Fragment {
         super.onDetach();
         Log.i(TAG, "onDetach");
     }
+
 }
