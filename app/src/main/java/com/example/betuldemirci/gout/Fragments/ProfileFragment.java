@@ -137,7 +137,6 @@ public class ProfileFragment extends Fragment {
                     final FirebaseUserInformation mUserInfo = new FirebaseUserInformation();
 
                     /*
-
                     mUserInfo.setmName(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmName());
                     mUserInfo.setmSurname(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSurname());
                     mUserInfo.setmSex(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSex());
@@ -154,7 +153,6 @@ public class ProfileFragment extends Fragment {
                     mHeight.setText(String.valueOf(mUserInfo.getmHeight()) + " cm");
                     mBirthday.setText(String.valueOf(mUserInfo.getmAge()) + " years old");
                     mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));
-
                     */
 
                     mStorageReference.child(mUserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

@@ -76,9 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     transaction.replace(R.id.container, new HomeFragment()).commit();
                     return true;
                 case R.id.navigation_challenge:
-                    //Toast.makeText(MainActivity.this, "Başlıyor...", Toast.LENGTH_SHORT).show();
                     transaction.replace(R.id.container, new ChallengeFragment()).commit();
-                    //Toast.makeText(MainActivity.this, "Bitti.", Toast.LENGTH_SHORT).show();
                     return true;
                 case R.id.navigation_account_circle:
                     transaction.replace(R.id.container, new ProfileFragment()).commit();

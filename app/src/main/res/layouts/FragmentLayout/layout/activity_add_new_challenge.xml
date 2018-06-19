@@ -13,6 +13,22 @@
         android:background="@drawable/rounded_background_add_new_challenge"
         android:gravity="center">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Friends"
+            android:layout_margin="5dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/add_friends"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_shape_orange"
+            android:src="@drawable/ic_add_circle_black_24dp"
+            android:padding="20dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
+
         <EditText
             android:id="@+id/challenge_name"
             android:layout_width="match_parent"
@@ -58,13 +74,38 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/date_picker"
-            android:layout_width="90dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:text="PickDate" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Date : "
+                android:layout_gravity="center"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:id="@+id/date_picker_from"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text="From"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/date_picker_to"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text="To"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,15 +118,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/step_number1"
                     android:layout_width="60dp"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <ImageView
+                        android:id="@+id/sn1"
                         android:layout_width="@dimen/personel_best_width"
                         android:layout_height="@dimen/personel_best_height"
                         android:layout_centerHorizontal="true"
@@ -94,7 +137,6 @@
                         android:padding="7dp"/>
 
                     <TextView
-                        android:id="@+id/step_number"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
                         android:layout_centerInParent="true"
@@ -112,15 +154,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/step_number2"
                     android:layout_width="60dp"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <ImageView
+                        android:id="@+id/sn2"
                         android:layout_width="@dimen/personel_best_width"
                         android:layout_height="@dimen/personel_best_height"
                         android:layout_centerHorizontal="true"
@@ -129,7 +173,6 @@
                         android:padding="7dp"/>
 
                     <TextView
-                        android:id="@+id/step_number"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
                         android:layout_centerInParent="true"
@@ -147,15 +190,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/step_number3"
                     android:layout_width="60dp"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <ImageView
+                        android:id="@+id/sn3"
                         android:layout_width="@dimen/personel_best_width"
                         android:layout_height="@dimen/personel_best_height"
                         android:layout_centerHorizontal="true"
@@ -164,7 +209,6 @@
                         android:padding="7dp"/>
 
                     <TextView
-                        android:id="@+id/step_number"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
                         android:layout_centerInParent="true"
@@ -182,24 +226,25 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/step_number4"
                     android:layout_width="60dp"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
                     <ImageView
+                        android:id="@+id/sn4"
                         android:layout_width="@dimen/personel_best_width"
                         android:layout_height="@dimen/personel_best_height"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/circle_shape_gray"
                         android:foregroundGravity="center"
-                        android:padding="7dp" />
+                        android:padding="7dp"/>
 
                     <TextView
-                        android:id="@+id/step_number"
                         android:layout_width="wrap_content"
                         android:layout_height="20sp"
                         android:layout_centerInParent="true"
