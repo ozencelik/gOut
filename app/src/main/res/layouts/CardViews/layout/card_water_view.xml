@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="glass"
+                android:text="@string/glass_text"
                 android:textSize="10sp"
                 android:textColor="@color/materail_blue" />
         </LinearLayout>
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Water"
+            android:text="@string/water_text"
             android:textSize="10sp"
             android:layout_marginBottom="5dp" />
 

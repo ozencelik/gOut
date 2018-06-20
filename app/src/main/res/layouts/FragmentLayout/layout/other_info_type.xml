@@ -24,7 +24,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's go just a little part"
+        android:text="@string/other_info_heading"
         android:textSize="15sp"
         android:textStyle="bold|italic"
         android:layout_marginBottom="8dp"
@@ -53,7 +53,7 @@
             android:layout_gravity="center"
             android:drawableStart="@drawable/birthday_cake"
             android:gravity="center"
-            android:hint="Your age (years old)"
+            android:hint="@string/your_age"
             android:inputType="numberDecimal"
             android:layout_margin="10dp"/>
 
@@ -65,7 +65,7 @@
             android:drawableStart="@drawable/measuring_tape"
             android:ems="10"
             android:gravity="center"
-            android:hint="Your height (cm)"
+            android:hint="@string/your_height"
             android:inputType="numberDecimal"
             android:layout_margin="10dp"/>
 
@@ -78,7 +78,7 @@
             android:drawableStart="@drawable/scale"
             android:ems="10"
             android:gravity="center"
-            android:hint="Your weight (kg)"
+            android:hint="@string/your_weight"
             android:inputType="numberDecimal"
             android:layout_margin="10dp"/>
 
@@ -90,7 +90,7 @@
             android:drawableStart="@drawable/champion"
             android:ems="10"
             android:gravity="center"
-            android:hint="Goal weight (kg)"
+            android:hint="@string/goal_weight"
             android:inputType="numberDecimal"
             android:layout_margin="10dp"/>
 
@@ -103,7 +103,7 @@
         android:layout_marginBottom="92dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Set your goal"
+        android:text="@string/set_goal"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -139,7 +139,7 @@
         android:layout_marginBottom="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="10dp"
-        android:text="14 Weeks -"
+        android:text="@string/weeks"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +153,7 @@
         android:layout_marginBottom="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="14dp"
-        android:text="Default"
+        android:text="@string/default_text"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +166,7 @@
         android:layout_marginBottom="56dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Lose : "
+        android:text="@string/lose"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +180,7 @@
         android:layout_marginBottom="56dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="0.8 kg / week"
+        android:text="@string/kg_per_week"
         android:textSize="10dp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
