@@ -152,27 +152,7 @@ public class ChallengeFragment extends Fragment {
 
                 startActivity(new Intent(getActivity(), AddNewChallengeActivity.class));
 
-                /*
 
-                TOTAL_CHALLENGES_COUNTER = preferences.getInt("TOTAL_CHALLENGES_COUNTER", 0);
-
-                mUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_CHALLENGES).child(String.valueOf(TOTAL_CHALLENGES_COUNTER++));
-
-                editor.putInt("TOTAL_CHALLENGES_COUNTER", TOTAL_CHALLENGES_COUNTER);
-                editor.commit();
-
-                mNewChallenge.setmChallengeName("ilk challenge");
-                mNewChallenge.setmAdminUserId(mUserId);
-
-                ArrayList<String> mChallengesAllUsersId = new ArrayList<>();
-                mChallengesAllUsersId.add("QBMNbxw155gxCEQRNJVWNwCO3b13");
-
-                mNewChallenge.setmAllUsersId(mChallengesAllUsersId);
-
-
-                mDatabaseRef.setValue(mNewChallenge);
-                */
             }
         });
 //        floatingActionButton2.setOnClickListener(new View.OnClickListener() {

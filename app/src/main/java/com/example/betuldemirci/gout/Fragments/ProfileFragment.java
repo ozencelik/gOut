@@ -129,6 +129,8 @@ public class ProfileFragment extends Fragment {
         super.onStart();
         Log.i(TAG, "onStart");
 
+        DatabaseReference db = mDatabaseReference.child("Users");
+
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -152,8 +154,8 @@ public class ProfileFragment extends Fragment {
                     mWeight.setText(String.valueOf(mUserInfo.getmWeight()) + " kg");
                     mHeight.setText(String.valueOf(mUserInfo.getmHeight()) + " cm");
                     mBirthday.setText(String.valueOf(mUserInfo.getmAge()) + " years old");
-                    mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));
-                    */
+                    mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));*/
+
 
                     mStorageReference.child(mUserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override

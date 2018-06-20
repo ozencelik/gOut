@@ -7,7 +7,7 @@ public class Challenges {
 
     private String mChallengeName, mAdminUserId, mChallengeType;// 1v1 or 1vN (Individual Challenge, Group Challenge)
     private ArrayList<String> mAllUsersId;
-    private int mNumberOfUser;
+    private int mNumberOfUser, mNumberOfStep;
 
     private String mStartDate, mEndDate;
     private boolean isChallengeActive;
@@ -24,7 +24,7 @@ public class Challenges {
         this.mNumberOfUser = 0;
     }
 
-    public Challenges(String CName, String CType, String CStartDate, String CEndDate, boolean CIsActive, String CAdminUserId, ArrayList<String> CAllUserId, int CNumberOfUsers){
+    public Challenges(String CName, String CType, String CStartDate, String CEndDate, boolean CIsActive, String CAdminUserId, ArrayList<String> CAllUserId, int CNumberOfUsers, int mNumberOfStep){
 
         this.mChallengeName = CName;
         this.mChallengeType = CType;
@@ -34,7 +34,7 @@ public class Challenges {
         this.mAdminUserId = CAdminUserId;
         this.mAllUsersId = CAllUserId;
         this.mNumberOfUser = CNumberOfUsers;
-
+        this.mNumberOfStep = mNumberOfStep;
     }
 
     public String getmChallengeName() {
@@ -99,5 +99,13 @@ public class Challenges {
 
     public void setChallengeActive(boolean challengeActive) {
         isChallengeActive = challengeActive;
+    }
+
+    public int getmNumberOfStep() {
+        return mNumberOfStep;
+    }
+
+    public void setmNumberOfStep(int mNumberOfStep) {
+        this.mNumberOfStep = mNumberOfStep;
     }
 }

@@ -7,16 +7,17 @@ import java.util.Date;
 public class FirebaseUserInformation {
     private static final String SIMPLE_DATE_FORMAT = "dd-MMM-yyyy";
 
-    private String mImageUrl, mName, mSurname, mSex, mUserType, mBirthdayText, mGoalType;
+    private String mUserId, mImageUrl, mName, mSurname, mSex, mUserType, mBirthdayText, mGoalType;
     private double mWeight, mGoalWeight, mHeight, mAge;
     private int mFriendsNumber, mWeeksGoalWeight;
 
     private SimpleDateFormat  mDateFormat;
 
 
-    public FirebaseUserInformation(String mGoalType, int mWeeksGoalWeight, String mImageUrl, String mName,
+    public FirebaseUserInformation(String mUserId , String mGoalType, int mWeeksGoalWeight, String mImageUrl, String mName,
                                    String mSurname, String mSex, String mUserType, double mWeight,
                                    double mGoalWeight, double mHeight, double mAge, int mFriendsNumber, Date mBirthday) {
+        this.mUserId = mUserId;
         this.mWeeksGoalWeight = mWeeksGoalWeight;
         this.mGoalType = mGoalType;
         this.mImageUrl = mImageUrl;
@@ -47,6 +48,14 @@ public class FirebaseUserInformation {
     public FirebaseUserInformation(String name, String surname){
         this.mName = name;
         this.mSurname = surname;
+    }
+
+    public String getmUserId() {
+        return mUserId;
+    }
+
+    public void setmUserId(String mUserId) {
+        this.mUserId = mUserId;
     }
 
     public String getmImageUrl() {
