@@ -1,23 +1,130 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">gOut</string>
 
     <!--VideoActivity-->
     <string name="login_button">Giriş Yap</string>
-    <string name="signup_button">Üye Ol</string>
+    <string name="signup_button">Üye ol</string>
 
     <!--HomeFragment-->
-    <string name="step_counter">Step Counter</string>
-    <string name="daily_step">Daily Step</string>
-    <string name="calorie_text">Calorie</string>
-    <string name="active_time">Active Time</string>
-    <string name="kiometer_text">Kilometer</string>
-    <string name="mins_text">Mins</string>
-    <string name="running_text">Running</string>
-    <string name="start_text">START</string>
-    <string name="glass_text">Glass</string>
-    <string name="water_text">Water</string>
-    <string name="weight_text">Weight</string>
-    <string name="go_text">Go</string>
+    <string name="step_counter">Adım Sayar</string>
+    <string name="daily_step">Günlük Adım</string>
+    <string name="calorie_text">cal</string>
+    <string name="active_time">Aktif Zaman</string>
+    <string name="kiometer_text">kilometre</string>
+    <string name="mins_text">dk</string>
+    <string name="running_text">Koşu</string>
+    <string name="start_button">BAŞLA</string>
+    <string name="glass_text">bardak</string>
+    <string name="water_text">Su</string>
+    <string name="weight_text">ağırlık</string>
+    <string name="go_button">Başla</string>
+    <string name="lunch_text">Öğle Yemeği</string>
+    <string name="add_button">Ekle</string>
+
+    <!--ActivityAddNewChallenge-->
+    <string name="add_friends">Arkadaş Ekle</string>
+    <string name="individual_button">Bireysel</string>
+    <string name="group_button">Grup</string>
+    <string name="setdate_text">Tarih :</string>
+    <string name="from_text">Nereden</string>
+    <string name="to_button">Nereye</string>
+
+    <!--ActivityLogin-->
+    <string name="email">Email</string>
+    <string name="password">Şifre</string>
+    <string name="option_text">---------------  DİĞER SEÇENEK   ---------------</string>
+    <string name="google_text">google</string>
+    <string name="facebook_text">Facebook</string>
+    <string name="create_account_message">Henüz hesabınız yok mu?Şimdi yaratın</string>
+
+    <!--ActivityOnBoarding-->
+    <string name="back_button">Geri</string>
+    <string name="next_button">İleri</string>
+
+    <!--ActivitySignUp-->
+    <string name="name_text">isim</string>
+    <string name="surname_text">soyisim</string>
+    <string name="create_account">Hesap Yarat</string>
+    <string name="member_message">Zaten üye misiniz?Oturum aç</string>
+
+    <!--DialogChallengeCard-->
+    <string name="contact_name">İletişim Adı</string>
+    <string name="phone_number">Telefon Numarası</string>
+    <string name="mobile_call">Mobil Arama</string>
+    <string name="use_messenger">Messenger Kullan</string>
+
+    <!--FragmentChallenge-->
+    <string name="new_challenge">Yeni Meydan Okuma</string>
+    <string name="past_challenge">Eski Meydan Okuma</string>
+
+    <!--FragmentProfile-->
+    <string name="logout_button">Giriş Yap</string>
+    <string name="total_step">Toplam Adım</string>
+    <string name="max_distance">Max. Mesafe</string>
+    <string name="number_activities">Aktivite Sayısı</string>
+    <string name="user_information">Kullanıcı Bilgisi</string>
+    <string name="activity_level">Aktivite Seviyesi</string>
+    <string name="active_text">Aktif</string>
+    <string name="golem">GOLEM</string>
+    <string name="friends">Arkadaşlar</string>
+    <string name="personel_best">En İyi Değerler</string>
+    <string name="steps">adım</string>
+    <string name="most_steps">En Çok Adım </string>
+    <string name="days_ago">110 Gün Sonra</string>
+    <string name="longest_duration">En Uzun Süre</string>
+    <string name="days_ago2">10 Gün Önce</string>
+    <string name="most_calories_burned">En Fazla Yakılan Kalori Miktarı</string>
+    <string name="days_ago3">148 Gün Sonra</string>
+    <string name="kilometer">km</string>
+    <string name="longest_distance">En Uzun Mesafe</string>
+    <string name="days_ago4">151 Gün Sonra</string>
+    <string name="km">km/h</string>
+    <string name="fasted_speed">En Hızlısı</string>
+    <string name="meter">m</string>
+    <string name="highest_elev">En Yüksek Kazanım</string>
+    <string name="days_ago5">108 Gün Sonra</string>
+    <string name="follow_me">Takip et</string>
+
+    <!--GoalType-->
+    <string name="goal_text">Amacın...?</string>
+    <string name="be_healty">Sağlıklı Olmak</string>
+    <string name="first_goal">Sağlıklı olmak için hem yemek tüketin,hem de öğrenin. </string>
+    <string name="lose_weight">Kilo Kaybetmek</string>
+    <string name="second_goal">Get leaner and increase your stamina</string>
+    <string name="gain_weight">Gain Weight</string>
+    <string name="third_goal">Build muscle strength</string>
+
+    <!--ItemChallengeCards-->
+    <string name="challenge_name">Challenge Name</string>
+    <string name="challenge_type">Challenge Type</string>
+    <string name="challenge_dates">Challenge Start and End Dates</string>
+    <string name="challenge_number">Challenge People Number</string>
+
+    <!--ItemListFriends-->
+    <string name="name">Name</string>
+    <string name="goal_type">GoalType</string>
+
+    <!--OtherInfoType-->
+    <string name="other_info_heading" tools:ignore="StringEscaping">Let's go just a little part</string>
+    <string name="set_goal">Set your goal</string>
+    <string name="weeks">14 Weeks -</string>
+    <string name="default_text">Default</string>
+    <string name="lose">Lose : </string>
+    <string name="kg_per_week">0.8 kg / week</string>
+    <string name="your_age">Your age (years old)</string>
+    <string name="your_height">Your height (cm)</string>
+    <string name="your_weight">Your weight (kg)</string>
+    <string name="goal_weight">Goal weight (kg)</string>
+
+    <!--SexType-->
+    <string name="hi_text">Hi!</string>
+    <string name="lets_start" tools:ignore="StringEscaping">Let's start with the basics</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!--ListFriendstoAddChallenge-->
+    <string name="search_user">search user</string>
+
 
     <string name="title_home">Home</string>
     <string name="challenge">Challenge</string>

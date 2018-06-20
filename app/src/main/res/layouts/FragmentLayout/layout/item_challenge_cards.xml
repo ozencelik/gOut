@@ -42,22 +42,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Challenge Name"
+                    android:text="@string/challenge_name"
                     android:layout_marginBottom="6dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Challenge Type"
+                    android:text="@string/challenge_type"
                     android:layout_marginBottom="6dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Challenge Start and End Dates"
+                    android:text="@string/challenge_dates"
                     android:layout_marginBottom="6dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Challenge People Number"
+                    android:text="@string/challenge_number"
                     android:layout_marginBottom="6dp"/>
 
             </LinearLayout>

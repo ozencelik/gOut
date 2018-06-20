@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="mins"
+                    android:text="@string/mins_text"
                     android:textColor="@color/materail_green"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Running"
+                android:text="@string/running_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                 android:layout_height="27dp"
                 android:background="@drawable/button_border_green"
                 android:gravity="center"
-                android:text="START" />
+                android:text="@string/start_button" />
             <!--android:background="?android:attr/selectableItemBackground"/>-->
 
 
@@ -151,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="glass"
+                    android:text="@string/glass_text"
                     android:textColor="@color/materail_blue"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -169,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Water"
+                android:text="@string/water_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Weight"
+                android:text="@string/weight_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -251,7 +251,7 @@
                 android:layout_height="27dp"
                 android:background="@drawable/button_border_red"
                 android:gravity="center"
-                android:text="Go" />
+                android:text="@string/go_button" />
         </LinearLayout>
     </LinearLayout>
 
@@ -300,7 +300,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="cal"
+                    android:text="@string/calorie_text"
                     android:textColor="@color/materail_brown"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -318,7 +318,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Lunch"
+                android:text="@string/lunch_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -327,7 +327,7 @@
                 android:layout_height="27dp"
                 android:background="@drawable/button_border_brown"
                 android:gravity="center"
-                android:text="Add" />
+                android:text="@string/add_button" />
             <!--android:background="?android:attr/selectableItemBackground"/>-->
 
 
@@ -382,7 +382,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="cal"
+                    android:text="@string/calorie_text"
                     android:textColor="@color/materail_brown"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -400,7 +400,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Lunch"
+                android:text="@string/lunch_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -409,7 +409,7 @@
                 android:layout_height="27dp"
                 android:background="@drawable/button_border_brown"
                 android:gravity="center"
-                android:text="Add" />
+                android:text="@string/add_button" />
             <!--android:background="?android:attr/selectableItemBackground"/>-->
 
 
@@ -465,7 +465,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="cal"
+                    android:text="@string/calorie_text"
                     android:textColor="@color/materail_brown"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -483,7 +483,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Lunch"
+                android:text="@string/lunch_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -492,7 +492,7 @@
                 android:layout_height="27dp"
                 android:background="@drawable/button_border_brown"
                 android:gravity="center"
-                android:text="Add" />
+                android:text="@string/add_button" />
             <!--android:background="?android:attr/selectableItemBackground"/>-->
 
 

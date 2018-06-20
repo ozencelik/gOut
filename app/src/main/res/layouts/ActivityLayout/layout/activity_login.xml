@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/three_margin"
                 android:layout_marginRight="@dimen/three_margin"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:text="ozenc.celik@gout.com" />
 
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/three_margin"
                 android:layout_marginRight="@dimen/three_margin"
-                android:hint="Şifre"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:text="123456" />
 
@@ -73,7 +73,7 @@
                 android:layout_marginRight="@dimen/four_margin"
                 android:layout_marginTop="@dimen/four_margin"
                 android:padding="12dp"
-                android:text="GİRİS YAP" />
+                android:text="@string/login_button" />
 
             <TextView
                 android:id="@+id/other_login"
@@ -82,7 +82,7 @@
                 android:layout_marginTop="@dimen/two_margin"
                 android:layout_marginBottom="@dimen/one_margin"
                 android:gravity="center"
-                android:text="---------------   DIGER SECENKLER   ---------------"
+                android:text="@string/option_text"
                 android:textSize="12dip" />
 
             <LinearLayout
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="12dp"
-                    android:text="google" />
+                    android:text="@string/google_text" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btn_face"
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="12dp"
-                    android:text="Facebook" />
+                    android:text="@string/facebook_text" />
 
             </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/three_margin"
                 android:gravity="center"
-                android:text="Henüz hesabınız yok mu? Hemen yaratın"
+                android:text="@string/create_account_message"
                 android:textSize="12dip" />
 
         </LinearLayout>

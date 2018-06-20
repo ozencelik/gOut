@@ -14,7 +14,7 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="search user"
+            android:hint="@string/search_user"
             android:gravity="center"
             android:layout_margin="10dp"
             android:drawableStart="@drawable/ic_search_black_24dp"/>
