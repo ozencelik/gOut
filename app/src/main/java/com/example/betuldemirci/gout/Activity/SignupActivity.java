@@ -139,7 +139,7 @@ public class SignupActivity extends AppCompatActivity {
                     mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_USER).child(mUserId);
 
                     //mUserInfo = new FirebaseUserInformation(name, surname);
-                    mUserInfo = new FirebaseUserInformation(mOn.getmGoalType(), mOn.getmWeeksGoalWeight(), "imageUrl", name, surname, mOn.getmSexType()
+                    mUserInfo = new FirebaseUserInformation(mUserId, mOn.getmGoalType(), mOn.getmWeeksGoalWeight(), "imageUrl", name, surname, mOn.getmSexType()
                             , "Prof.", mOn.getmCurrentWeight(), mOn.getmGoalWeight(), mOn.getmHeight(), mOn.getmAge(), 0, Calendar.getInstance().getTime());
                     mDatabaseRef.setValue(mUserInfo);
 
