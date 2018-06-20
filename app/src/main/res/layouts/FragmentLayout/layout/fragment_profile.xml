@@ -118,7 +118,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:text="Logout"
+                    android:text="@string/logout_button"
                     android:textStyle="bold"
                     android:textSize="10sp"
                     android:layout_gravity="center"/>
@@ -153,7 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total Adım"
+                        android:text="@string/total_step"
                         android:textSize="15sp"
                         android:textStyle="bold"/>
 
@@ -182,7 +182,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Max Distance"
+                        android:text="@string/max_distance"
                         android:textSize="15sp"
                         android:textStyle="bold"/>
 
@@ -212,7 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Aktivite Sayısı"
+                        android:text="@string/number_activities"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -246,7 +246,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:text="User Information"
+                    android:text="@string/user_information"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
@@ -347,7 +347,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
-                    android:text="Activity Level"
+                    android:text="@string/activity_level"
                     android:layout_margin="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
@@ -397,7 +397,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ACTIVE"
+                            android:text="@string/active_text"
                             android:textSize="10sp"
                             android:layout_gravity="center"/>
                         <!--android:fontFamily="@fonts/typo_grotesk_rounded_light_demo.otf"-->
@@ -433,7 +433,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="GOLEM"
+                        android:text="@string/golem"
                         android:textSize="10sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
@@ -472,7 +472,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Friends"
+                            android:text="@string/friends"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:layout_gravity="center"/>
@@ -505,7 +505,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="28dp"
-                        android:text="Personal Best"
+                        android:text="@string/personel_best"
                         android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
@@ -570,7 +570,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="steps"
+                                android:text="@string/steps"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -580,14 +580,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Most steps"
+                                android:text="@string/most_steps"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="110 days ago"
+                                android:text="@string/days_ago"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -634,7 +634,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="mins"
+                                android:text="@string/mins_text"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -644,14 +644,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Longest duration"
+                                android:text="@string/longest_duration"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10 days ago"
+                                android:text="@string/days_ago2"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -697,7 +697,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="cal"
+                                android:text="@string/calorie_text"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -707,14 +707,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Most calories burned"
+                                android:text="@string/most_calories_burned"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="148 days ago"
+                                android:text="@string/days_ago3"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -774,7 +774,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="km"
+                                android:text="@string/kilometer"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -784,14 +784,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Longest distance"
+                                android:text="@string/longest_distance"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="151 days ago"
+                                android:text="@string/days_ago4"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -837,7 +837,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="km/h"
+                                android:text="@string/km"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -847,14 +847,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Fastest speed"
+                                android:text="@string/fasted_speed"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="148 days ago"
+                                android:text="@string/days_ago3"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -901,7 +901,7 @@
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
                                 android:layout_marginStart="55dp"
-                                android:text="m"
+                                android:text="@string/meter"
                                 android:textSize="15sp" />
                         </RelativeLayout>
                         <LinearLayout
@@ -911,14 +911,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Highest elev. gain"
+                                android:text="@string/highest_elev"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="108 days ago"
+                                android:text="@string/days_ago5"
                                 android:textSize="10sp"
                                 android:layout_gravity="center"
                                 android:textColor="@color/iron"
@@ -941,7 +941,7 @@
             android:background="@drawable/button_style"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:text="Takip Et"
+            android:text="@string/follow_me"
             android:textColor="#fff" />
 
 

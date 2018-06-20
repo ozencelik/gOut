@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">gOut</string>
 
     <!--VideoActivity-->
@@ -8,16 +8,123 @@
     <!--HomeFragment-->
     <string name="step_counter">Step Counter</string>
     <string name="daily_step">Daily Step</string>
-    <string name="calorie_text">Calorie</string>
+    <string name="calorie_text">cal</string>
     <string name="active_time">Active Time</string>
-    <string name="kiometer_text">Kilometer</string>
-    <string name="mins_text">Mins</string>
+    <string name="kiometer_text">kilometer</string>
+    <string name="mins_text">mins</string>
     <string name="running_text">Running</string>
-    <string name="start_text">START</string>
-    <string name="glass_text">Glass</string>
+    <string name="start_button">START</string>
+    <string name="glass_text">glass</string>
     <string name="water_text">Water</string>
-    <string name="weight_text">Weight</string>
-    <string name="go_text">Go</string>
+    <string name="weight_text">weight</string>
+    <string name="go_button">Go</string>
+    <string name="lunch_text">Lunch</string>
+    <string name="add_button">Add</string>
+
+    <!--ActivityAddNewChallenge-->
+    <string name="add_friends">Add Friends</string>
+    <string name="individual_button">Individual C.</string>
+    <string name="group_button">Group C.</string>
+    <string name="setdate_text"> Set Date :</string>
+    <string name="from_text">From</string>
+    <string name="to_button">To</string>
+    
+    <!--ActivityLogin-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="option_text">---------------   OTHER OPTION   ---------------</string>
+    <string name="google_text">google</string>
+    <string name="facebook_text">Facebook</string>
+    <string name="create_account_message">Do not you have an account yet? Create it now</string>
+
+    <!--ActivityOnBoarding-->
+    <string name="back_button">Back</string>
+    <string name="next_button">Next</string>
+
+    <!--ActivitySignUp-->
+    <string name="name_text">name</string>
+    <string name="surname_text">surname</string>
+    <string name="create_account">Create Account</string>
+    <string name="member_message">Are you already a member? Log in</string>
+
+    <!--DialogChallengeCard-->
+    <string name="contact_name">Contact Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="mobile_call">Mobile Call</string>
+    <string name="use_messenger">Use Messenger</string>
+
+    <!--FragmentChallenge-->
+    <string name="new_challenge">New Challenge</string>
+    <string name="past_challenge">Past Challenge</string>
+
+    <!--FragmentProfile-->
+    <string name="logout_button">Logout</string>
+    <string name="total_step">Total Step</string>
+    <string name="max_distance">Max Distance</string>
+    <string name="number_activities">Number of Activities</string>
+    <string name="user_information">User Information</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="active_text">ACTIVE</string>
+    <string name="golem">GOLEM</string>
+    <string name="friends">Friends</string>
+    <string name="personel_best">Personel Best</string>
+    <string name="steps">steps</string>
+    <string name="most_steps">Most Steps</string>
+    <string name="days_ago">110 Days Ago</string>
+    <string name="longest_duration">Longest duration</string>
+    <string name="days_ago2">10 Days Ago</string>
+    <string name="most_calories_burned">Most calories burned</string>
+    <string name="days_ago3">148 Days Ago</string>
+    <string name="kilometer">km</string>
+    <string name="longest_distance">Longest Distance</string>
+    <string name="days_ago4">151 Days Ago</string>
+    <string name="km">km/h</string>
+    <string name="fasted_speed">Fasted Speed</string>
+    <string name="meter">m</string>
+    <string name="highest_elev">Highest elev. gain</string>
+    <string name="days_ago5">108 Days Ago</string>
+    <string name="follow_me">Follew me</string>
+
+    <!--GoalType-->
+    <string name="goal_text">What is your goal?</string>
+    <string name="be_healty">Be Healtier</string>
+    <string name="first_goal">Eat and train for optimum health</string>
+    <string name="lose_weight">Lose Weight</string>
+    <string name="second_goal">Get leaner and increase your stamina</string>
+    <string name="gain_weight">Gain Weight</string>
+    <string name="third_goal">Build muscle strength</string>
+
+    <!--ItemChallengeCards-->
+    <string name="challenge_name">Challenge Name</string>
+    <string name="challenge_type">Challenge Type</string>
+    <string name="challenge_dates">Challenge Start and End Dates</string>
+    <string name="challenge_number">Challenge People Number</string>
+
+    <!--ItemListFriends-->
+    <string name="name">Name</string>
+    <string name="goal_type">GoalType</string>
+
+    <!--OtherInfoType-->
+    <string name="other_info_heading" tools:ignore="StringEscaping">Let's go just a little part</string>
+    <string name="set_goal">Set your goal</string>
+    <string name="weeks">14 Weeks -</string>
+    <string name="default_text">Default</string>
+    <string name="lose">Lose : </string>
+    <string name="kg_per_week">0.8 kg / week</string>
+    <string name="your_age">Your age (years old)</string>
+    <string name="your_height">Your height (cm)</string>
+    <string name="your_weight">Your weight (kg)</string>
+    <string name="goal_weight">Goal weight (kg)</string>
+
+    <!--SexType-->
+    <string name="hi_text">Hi!</string>
+    <string name="lets_start" tools:ignore="StringEscaping">Let's start with the basics</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!--ListFriendstoAddChallenge-->
+    <string name="search_user">search user</string>
+
 
     <string name="title_home">Home</string>
     <string name="challenge">Challenge</string>

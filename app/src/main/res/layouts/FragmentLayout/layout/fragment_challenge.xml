@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:paddingBottom="10dp"
-                    android:text="New Challenge"
+                    android:text="@string/new_challenge"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:paddingBottom="10dp"
-                    android:text="Past Challenge"
+                    android:text="@string/past_challenge"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
