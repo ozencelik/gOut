@@ -1,0 +1,136 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">gOut</string>
+
+    <!--VideoActivity-->
+    <string name="login_button">Logga in</string>
+    <string name="signup_button">Bli Medlem</string>
+
+    <!--HomeFragment-->
+    <string name="step_counter">Stegräknare</string>
+    <string name="daily_step">Dagligt Steg</string>
+    <string name="calorie_text">cal</string>
+    <string name="active_time">Aktiv Tid</string>
+    <string name="kiometer_text">kilometer</string>
+    <string name="mins_text">mins</string>
+    <string name="running_text">Löpning</string>
+    <string name="start_button">START</string>
+    <string name="glass_text">glas</string>
+    <string name="water_text">Vatten</string>
+    <string name="weight_text">Vikt</string>
+    <string name="go_button">Gå</string>
+    <string name="lunch_text">Lunch</string>
+    <string name="add_button">Lägg till</string>
+
+    <!--ActivityAddNewChallenge-->
+    <string name="add_friends">Lägga till vänner</string>
+    <string name="individual_button">Individuell U.</string>
+    <string name="group_button">Grupp U.</string>
+    <string name="setdate_text"> Bestämma Datum :</string>
+    <string name="from_text">Från</string>
+    <string name="to_button">Till</string>
+
+    <!--ActivityLogin-->
+    <string name="email">E-post</string>
+    <string name="password">Lösenord</string>
+    <string name="option_text">---------------   ANNAT ALTERNATİV   ---------------</string>
+    <string name="google_text">google</string>
+    <string name="facebook_text">Facebook</string>
+    <string name="create_account_message">Har du inget konto än? Skapa det nu</string>
+
+    <!--ActivityOnBoarding-->
+    <string name="back_button">Tillbaka</string>
+    <string name="next_button">Nästa</string>
+
+    <!--ActivitySignUp-->
+    <string name="name_text">Namn</string>
+    <string name="surname_text">Efternamn</string>
+    <string name="create_account">Skapa Konto</string>
+    <string name="member_message">Är du redan medlem? Logga in</string>
+
+    <!--DialogChallengeCard-->
+    <string name="contact_name">Kontaktnamn</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="mobile_call">Mobilt Samtal</string>
+    <string name="use_messenger">Använd Budbärare</string>
+
+    <!--FragmentChallenge-->
+    <string name="new_challenge">Ny Utmaning</string>
+    <string name="past_challenge">Tidigare Utmaning</string>
+
+    <!--FragmentProfile-->
+    <string name="logout_button">Logga ut</string>
+    <string name="total_step">Totalt Steg</string>
+    <string name="max_distance">Max Avstånd</string>
+    <string name="number_activities">Antal Aktiviteter</string>
+    <string name="user_information">Användar Information</string>
+    <string name="activity_level">Aktivitetsnivå</string>
+    <string name="active_text">ACTIVA</string>
+    <string name="golem">GOLEM</string>
+    <string name="friends">Vänner</string>
+    <string name="personel_best">Bästa Värden</string>
+    <string name="steps">steg</string>
+    <string name="most_steps">Mest Steg</string>
+    <string name="days_ago">110 Dagar Sedan</string>
+    <string name="longest_duration">Längsta varaktighet</string>
+    <string name="days_ago2">10 Dagar Sedan</string>
+    <string name="most_calories_burned">De flesta kalorier bränns</string>
+    <string name="days_ago3">148 Dagar Sedan</string>
+    <string name="kilometer">km</string>
+    <string name="longest_distance">Längsta distans</string>
+    <string name="days_ago4">151 Dagar Sedan</string>
+    <string name="km">km/h</string>
+    <string name="fasted_speed">Fasted Speed</string>
+    <string name="meter">m</string>
+    <string name="highest_elev">Högsta Vinsten</string>
+    <string name="days_ago5">108 Dagar Sedan</string>
+    <string name="follow_me">Följ mig</string>
+
+    <!--GoalType-->
+    <string name="goal_text">Vad är ditt mål?</string>
+    <string name="be_healty">Vara Friskare</string>
+    <string name="first_goal">Ät och träna för optimal hälsa</string>
+    <string name="lose_weight">Gå ner i vikt</string>
+    <string name="second_goal">Bli smalare och öka din uthållighet</string>
+    <string name="gain_weight">Gå upp i vikt</string>
+    <string name="third_goal">Bygg muskelstyrka</string>
+
+    <!--ItemChallengeCards-->
+    <string name="challenge_name">Utmaningsnamn</string>
+    <string name="challenge_type">utmaningstyp</string>
+    <string name="challenge_dates">Utmana start- och slutdatum</string>
+    <string name="challenge_number">Utmaning Människorummer</string>
+
+    <!--ItemListFriends-->
+    <string name="name">Namn</string>
+    <string name="goal_type">Måltyp</string>
+
+    <!--OtherInfoType-->
+    <string name="other_info_heading" tools:ignore="StringEscaping">Låt oss gå en liten del</string>
+    <string name="set_goal">Ställ in ditt mål</string>
+    <string name="weeks">14 Veckor -</string>
+    <string name="default_text">Standard</string>
+    <string name="lose">Förlora : </string>
+    <string name="kg_per_week">0.8 kg / vecka</string>
+    <string name="your_age">Din ålder</string>
+    <string name="your_height">Din längd(cm)</string>
+    <string name="your_weight">Din vikt (kg)</string>
+    <string name="goal_weight">Målvikt(kg)</string>
+
+    <!--SexType-->
+    <string name="hi_text">Hej!</string>
+    <string name="lets_start" tools:ignore="StringEscaping">Låt oss börja med grunderna</string>
+    <string name="male">Manlig</string>
+    <string name="female">Kvinna</string>
+
+    <!--ListFriendstoAddChallenge-->
+    <string name="search_user">sök användare</string>
+
+
+    <string name="title_home">Hem</string>
+    <string name="challenge">Utmaning</string>
+    <string name="profile">Profil</string>
+
+    <string name="action_past_challenge">dåtid</string>
+    <string name="action_new_challenge">ny</string>
+
+</resources>

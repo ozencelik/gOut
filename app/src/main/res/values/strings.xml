@@ -16,7 +16,7 @@
     <string name="start_button">START</string>
     <string name="glass_text">glass</string>
     <string name="water_text">Water</string>
-    <string name="weight_text">weight</string>
+    <string name="weight_text">Weight</string>
     <string name="go_button">Go</string>
     <string name="lunch_text">Lunch</string>
     <string name="add_button">Add</string>
@@ -42,8 +42,8 @@
     <string name="next_button">Next</string>
 
     <!--ActivitySignUp-->
-    <string name="name_text">name</string>
-    <string name="surname_text">surname</string>
+    <string name="name_text">Name</string>
+    <string name="surname_text">Surname</string>
     <string name="create_account">Create Account</string>
     <string name="member_message">Are you already a member? Log in</string>
 
@@ -83,7 +83,7 @@
     <string name="meter">m</string>
     <string name="highest_elev">Highest elev. gain</string>
     <string name="days_ago5">108 Days Ago</string>
-    <string name="follow_me">Follew me</string>
+    <string name="follow_me">Follow me</string>
 
     <!--GoalType-->
     <string name="goal_text">What is your goal?</string>
