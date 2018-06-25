@@ -136,26 +136,27 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
 
-                    final FirebaseUserInformation mUserInfo = new FirebaseUserInformation();
+                    if(ds != null){
+                        final FirebaseUserInformation mUserInfo = new FirebaseUserInformation();
 
-                    /*
-                    mUserInfo.setmName(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmName());
-                    mUserInfo.setmSurname(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSurname());
-                    mUserInfo.setmSex(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSex());
-                    mUserInfo.setmWeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmWeight());
-                    mUserInfo.setmHeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmHeight());
-                    mUserInfo.setmImageUrl(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmImageUrl());
-                    mUserInfo.setmAge(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmAge());
-                    mUserInfo.setmFriendsNumber(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmFriendsNumber());
+                        mUserInfo.setmName(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmName());
+                        mUserInfo.setmSurname(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSurname());
+                        mUserInfo.setmSex(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmSex());
+                        mUserInfo.setmWeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmWeight());
+                        mUserInfo.setmHeight(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmHeight());
+                        mUserInfo.setmImageUrl(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmImageUrl());
+                        mUserInfo.setmAge(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmAge());
+                        mUserInfo.setmFriendsNumber(ds.child(mUserId).getValue(FirebaseUserInformation.class).getmFriendsNumber());
 
-                    mUserName.setText(mUserInfo.getmName() + " " + mUserInfo.getmSurname());
-                    mUserEmail.setText("  " + mUser.getEmail() + "  ");
-                    mSex.setText(mUserInfo.getmSex());
-                    mWeight.setText(String.valueOf(mUserInfo.getmWeight()) + " kg");
-                    mHeight.setText(String.valueOf(mUserInfo.getmHeight()) + " cm");
-                    mBirthday.setText(String.valueOf(mUserInfo.getmAge()) + " years old");
-                    mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));*/
+                        mUserName.setText(mUserInfo.getmName() + " " + mUserInfo.getmSurname());
+                        mUserEmail.setText("  " + mUser.getEmail() + "  ");
+                        mSex.setText(mUserInfo.getmSex());
+                        mWeight.setText(String.valueOf(mUserInfo.getmWeight()) + " kg");
+                        mHeight.setText(String.valueOf(mUserInfo.getmHeight()) + " cm");
+                        mBirthday.setText(String.valueOf(mUserInfo.getmAge()) + " years old");
+                        mUserFriend.setText(String.valueOf(mUserInfo.getmFriendsNumber()));
 
+                    }
 
                     mStorageReference.child(mUserId).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override

@@ -155,7 +155,8 @@ public class ListFriendsToAddChallenge extends AppCompatActivity {
                                 .putExtra("uid", String.valueOf(uid))
                                 .putExtra("img", imageUrl));
 
-                        return true;
+                        //ctx.ListFriendsToAddChallenge.this.finish();
+                        return false;
                     }
 
                 });

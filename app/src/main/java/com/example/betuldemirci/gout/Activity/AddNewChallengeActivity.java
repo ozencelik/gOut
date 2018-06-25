@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,7 +30,9 @@ import com.squareup.picasso.Picasso;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -56,6 +59,8 @@ public class AddNewChallengeActivity extends AppCompatActivity {
     private String mUserId;
     private DatabaseReference mDatabaseRef;
     private static final String CHILD_CHALLENGES = "Challenges";
+
+    int i = 0;
 
 
     @Override
@@ -158,17 +163,18 @@ public class AddNewChallengeActivity extends AppCompatActivity {
                 TOTAL_CHALLENGES_COUNTER = preferences.getInt("TOTAL_CHALLENGES_COUNTER", 0);
 
                 mUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_CHALLENGES).child(String.valueOf(TOTAL_CHALLENGES_COUNTER++));
+                mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mUserId).child("mChallengeList").child(UUID.randomUUID().toString());
+                //mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mUserId).child("mChallengeList").child(String.valueOf(i++));
 
                 editor.putInt("TOTAL_CHALLENGES_COUNTER", TOTAL_CHALLENGES_COUNTER);
                 editor.commit();
 
                 mAddChallenges.setmAdminUserId(mUserId);
+
+
                 mDatabaseRef.setValue(mAddChallenges);
 
-                finish();
-
-                //getSupportFragmentManager().beginTransaction().replace(R.id.container, new ChallengeFragment()).commit(); //Wooooooowwww
+                Toast.makeText(AddNewChallengeActivity.this, "New Challenge Added...",Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -1,8 +1,10 @@
 package com.example.betuldemirci.gout.Model;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class FirebaseUserInformation {
     private static final String SIMPLE_DATE_FORMAT = "dd-MMM-yyyy";

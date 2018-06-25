@@ -166,8 +166,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                     double a = (object.dailyStep / object.goalStep) * 100;
                     ((StackTypeViewHolder) holder).mModels = new ArrayList<>();
-                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Adım", (int) a, Color.parseColor(mNew.bgColors[0]), Color.parseColor(mNew.mStartColors[0])));
-                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Kalori", (int) object.calori, Color.parseColor(mNew.bgColors[1]), Color.parseColor(mNew.mStartColors[1])));
+                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Step", (int) a, Color.parseColor(mNew.bgColors[0]), Color.parseColor(mNew.mStartColors[0])));
+                    ((StackTypeViewHolder) holder).mModels.add(new ArcProgressStackView.Model("Calorie", (int) object.calori, Color.parseColor(mNew.bgColors[1]), Color.parseColor(mNew.mStartColors[1])));
                     //        models.add(new ArcProgressStackView.Model("Stack", 75, Color.parseColor(bgColors[2]), Color.parseColor(mStartColors[2])));
                     //        models.add(new ArcProgressStackView.Model("View", 100, Color.parseColor(bgColors[3]), Color.parseColor(mStartColors[3])));
 

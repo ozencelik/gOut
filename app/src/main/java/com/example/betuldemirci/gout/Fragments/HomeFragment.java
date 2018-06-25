@@ -19,10 +19,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.betuldemirci.gout.Adapters.RecyclerViewAdapter;
+import com.example.betuldemirci.gout.Model.ExerciseData;
 import com.example.betuldemirci.gout.Model.HomeFragmentModel;
 import com.example.betuldemirci.gout.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -52,15 +60,21 @@ public class HomeFragment extends Fragment {
     WaveLoadingView mWave;
     TextView typeNumber, typeName;
     StepperTouch mStepper;
-    double dailyWater = 3;
-    double goalWater = 10;
+    double dailyWater;
+    double goalWater;
     String waterType = "glass";
+
+    int dailyStep, dailyGoalStep, calorie;
 
     ImageView mImage;
     TextView weightAmount;
     Button weightButton;
-    int imageId = R.drawable.weight_icon_lbs;
-    double kg = 50.2;
+    int imageId = R.drawable.weight_icon_kg;
+    double kg;
+
+
+    private DatabaseReference mDatabaseReference;
+    private String mUserId;
 
     @Override
     public void onAttach(Context context) {
@@ -81,6 +95,9 @@ public class HomeFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_home, container, false);
 
         Log.i(TAG, "onCreateView");
+
+        mUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
         //DEFINITIONS
         mStartColors = getResources().getStringArray(R.array.devlight);
@@ -115,26 +132,14 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Log.i(TAG, "onViewCreated");
 
-        mList.add(new HomeFragmentModel(HomeFragmentModel.STACK_TYPE, 4560, 6000, 56));
+        getExerciseData();
+
+        mList.add(new HomeFragmentModel(HomeFragmentModel.STACK_TYPE, 0, 0, calorie));
 
         StackView.setLayoutManager(mLayoutManager);
         StackView.setItemAnimator(new DefaultItemAnimator());
         StackView.setAdapter(firstAdapter);
 
-        minsNumber.setText(String.valueOf(15));
-        timeType.setText("mins");
-
-        mWave.setProgressValue((int)((dailyWater / goalWater) * 100));
-
-        typeNumber.setText(String.valueOf((int)goalWater));
-        typeName.setText(waterType);
-
-        mStepper.stepper.setMax((int)goalWater);
-        mStepper.stepper.setMin(0);
-        mStepper.stepper.setValue((int)dailyWater);
-
-        mImage.setImageResource(imageId);
-        weightAmount.setText(String.valueOf(kg));
     }
 
     @Override
@@ -162,8 +167,10 @@ public class HomeFragment extends Fragment {
                 if(positive)plusWaveLoadingView();
                 else minusWaveLoadingView();
 
+                //mStepper.stepper.setValue((int)dailyWater);
             }
         });
+
     }
 
     @Override
@@ -181,7 +188,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.i(TAG, "onDestroy");
+        Log.i(TAG, "onDestroy : DAILY WATE : "+dailyWater);
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(mUserId).child("mExerciseData").child("mDailyWater");
+        mDatabaseReference.setValue(--dailyWater);
     }
 
     @Override
@@ -190,16 +199,87 @@ public class HomeFragment extends Fragment {
         Log.i(TAG, "onDetach");
     }
 
+    public void setExerciseData(){
+
+        mList.clear();
+        mList.add(new HomeFragmentModel(HomeFragmentModel.STACK_TYPE, dailyStep, dailyGoalStep, calorie));
+
+        StackView.setLayoutManager(mLayoutManager);
+        StackView.setItemAnimator(new DefaultItemAnimator());
+        StackView.setAdapter(firstAdapter);
+
+        minsNumber.setText(String.valueOf(15));
+        timeType.setText("mins");
+
+        mWave.setProgressValue((int)((dailyWater / goalWater) * 100));
+
+        typeNumber.setText(String.valueOf((int)goalWater));
+        typeName.setText(waterType);
+
+        mStepper.stepper.setMax((int)goalWater);
+        mStepper.stepper.setMin(0);
+        mStepper.stepper.setValue((int)dailyWater);
+        mWave.setProgressValue((int)((dailyWater / goalWater) * 100));
+
+        mImage.setImageResource(imageId);
+        weightAmount.setText(String.valueOf(kg));
+
+    }
+
+    public void getExerciseData(){
+
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference();
+
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+
+                    final ExerciseData ex = new ExerciseData();
+
+                    ex.setmDailyStep(ds.child(mUserId).child("mExerciseData").child("mDailyStep").getValue(int.class));
+                    ex.setmDailyStepGoal(ds.child(mUserId).child("mExerciseData").child("mDailyStepGoal").getValue(int.class));
+                    ex.setmDailyWater(ds.child(mUserId).child("mExerciseData").child("mDailyWater").getValue(int.class));
+                    ex.setmDailyWaterGoal(ds.child(mUserId).child("mExerciseData").child("mDailyWaterGoal").getValue(int.class));
+                    ex.setmDailyStepGoal(ds.child(mUserId).child("mExerciseData").child("mDailyStepGoal").getValue(int.class));
+                    ex.setmDailyWater(ds.child(mUserId).child("mExerciseData").child("mDailyWater").getValue(int.class));
+                    ex.setmCalori(ds.child(mUserId).child("mExerciseData").child("mCalori").getValue(int.class));
+
+                    kg = ds.child(mUserId).child("mWeight").getValue(double.class);
+                    dailyWater = ex.getmDailyWater();
+                    dailyWater--;
+                    goalWater = ex.getmDailyWaterGoal();
+                    dailyStep = ex.getmDailyStep();
+                    dailyGoalStep = ex.getmDailyStepGoal();
+                    calorie = ex.getmCalori();
+
+                    setExerciseData();
+
+                    //Toast.makeText(getContext(), "Girdi : "+kg+" "+dailyWater+" "+goalWater, Toast.LENGTH_SHORT).show();
+
+                }
+
+                setExerciseData();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     public void plusWaveLoadingView(){
         dailyWater++;
         mWave.setProgressValue((int)((dailyWater / goalWater) * 100));
-        //Toast.makeText(getActivity(), "girdi",Toast.LENGTH_SHORT).show();
+        Log.i(TAG, "onDestroy : DAILY WATER PLUS : "+dailyWater);
     }
 
     public void minusWaveLoadingView(){
         dailyWater--;
         mWave.setProgressValue((int)((dailyWater / goalWater) * 100));
-        //Toast.makeText(getActivity(), "girdi",Toast.LENGTH_SHORT).show();
+        Log.i(TAG, "onDestroy : DAILY WATER MINUS : "+dailyWater);
     }
 
 
