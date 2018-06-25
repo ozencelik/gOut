@@ -61,7 +61,7 @@ public class SplashActivity extends AppCompatActivity {
         timerThread = new Thread() {
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
@@ -94,7 +94,7 @@ public class SplashActivity extends AppCompatActivity {
         if(mUser != null) isUserExist = true;
         else isUserExist = false;
 
-        Toast.makeText(SplashActivity.this, "isUserExist : "+isUserExist, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SplashActivity.this, "isUserExist : "+isUserExist, Toast.LENGTH_SHORT).show();
     }
 
 

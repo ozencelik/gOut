@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.betuldemirci.gout.Model.ExerciseData;
 import com.example.betuldemirci.gout.Model.FirebaseUserInformation;
 import com.example.betuldemirci.gout.Model.OnBoardingModel;
 import com.example.betuldemirci.gout.R;
@@ -142,6 +143,11 @@ public class SignupActivity extends AppCompatActivity {
                     mUserInfo = new FirebaseUserInformation(mUserId, mOn.getmGoalType(), mOn.getmWeeksGoalWeight(), "imageUrl", name, surname, mOn.getmSexType()
                             , "Prof.", mOn.getmCurrentWeight(), mOn.getmGoalWeight(), mOn.getmHeight(), mOn.getmAge(), 0, Calendar.getInstance().getTime());
                     mDatabaseRef.setValue(mUserInfo);
+
+                    ExerciseData ex = new ExerciseData(4563, 200, 6000, 5, 10, 20000, 10.2, 3, 5005, 97, 236, 218, 20.02, 27.5);
+
+                    mDatabaseRef = FirebaseDatabase.getInstance().getReference().child(CHILD_USER).child(mUserId).child("mExerciseData");
+                    mDatabaseRef.setValue(ex);
 
                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
 

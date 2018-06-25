@@ -498,435 +498,435 @@
                 android:weightSum="3"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="28dp"
-                        android:text="@string/personel_best"
-                        android:layout_margin="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="15sp"
-                        android:layout_weight="1"/>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="28dp"-->
+                        <!--android:text="@string/personel_best"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_weight="1"/>-->
 
-                    <!--<ImageView-->
-                        <!--android:layout_width="20dp"-->
-                        <!--android:layout_height="20dp"-->
-                        <!--android:src="@drawable/ic_info_black_24dp"-->
-                        <!--android:layout_margin="10dp"/>-->
-                </LinearLayout>
+                    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="20dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:src="@drawable/ic_info_black_24dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_margin="10dp"/>&ndash;&gt;-->
+                <!--</LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:weightSum="3">
-
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
-
-                            <ImageView
-                                android:id="@+id/step"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/step"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
-
-                            <TextView
-                                android:id="@+id/step_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/steps_text"
-                                android:text="20325"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/steps_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/steps"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/most_steps"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
-
-                            <ImageView
-                                android:id="@+id/chronometer"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/chronometer"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
-
-                            <TextView
-                                android:id="@+id/chronometer_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/chronometer_text"
-                                android:text="166"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/chronometer_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/mins_text"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/longest_duration"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago2"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
-
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
-
-                            <ImageView
-                                android:id="@+id/calori"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/burn"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
-
-                            <TextView
-                                android:id="@+id/calori_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/calori_text"
-                                android:text="973"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/calori_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/calorie_text"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/most_calories_burned"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago3"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
-
-                        </LinearLayout>
-                    </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="110dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginBottom="15dp"-->
+                    <!--android:weightSum="3">-->
 
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="15dp"
-                    android:weightSum="3">
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/step"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/step"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/step_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/steps_text"-->
+                                <!--android:text="20325"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/steps_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/steps"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/most_steps"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/chronometer"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/chronometer"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/chronometer_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/chronometer_text"-->
+                                <!--android:text="166"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/chronometer_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/mins_text"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/longest_duration"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago2"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/calori"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/burn"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/calori_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/calori_text"-->
+                                <!--android:text="973"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/calori_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/calorie_text"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/most_calories_burned"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago3"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
 
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="110dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginBottom="15dp"-->
+                    <!--android:weightSum="3">-->
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
 
-                            <ImageView
-                                android:id="@+id/distance"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/distance11"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
 
-                            <TextView
-                                android:id="@+id/distance_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/distance_text"
-                                android:text="20.02"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/distance_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/kilometer"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/longest_distance"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago4"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
 
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <!--<ImageView-->
+                                <!--android:id="@+id/distance"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/distance11"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
+                            <!--<TextView-->
+                                <!--android:id="@+id/distance_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/distance_text"-->
+                                <!--android:text="20.02"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/distance_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/kilometer"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/longest_distance"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago4"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
 
-                            <ImageView
-                                android:id="@+id/speedmeter"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/speedmeter"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
 
-                            <TextView
-                                android:id="@+id/speedmeter_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/speedmeter_text"
-                                android:text="27.0"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/speedmeter_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/km"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/fasted_speed"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago3"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
 
-                        </LinearLayout>
-                    </LinearLayout>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/speedmeter"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/speedmeter"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <!--<TextView-->
+                                <!--android:id="@+id/speedmeter_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/speedmeter_text"-->
+                                <!--android:text="27.0"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/speedmeter_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/km"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/fasted_speed"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago3"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
 
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/personel_best_height">
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
 
-                            <ImageView
-                                android:id="@+id/elevation"
-                                android:layout_width="@dimen/personel_best_width"
-                                android:layout_height="@dimen/personel_best_height"
-                                android:layout_centerHorizontal="true"
-                                android:background="@drawable/elevation"
-                                android:foregroundGravity="center"
-                                android:padding="7dp" />
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="vertical">-->
 
-                            <TextView
-                                android:id="@+id/elevation_number"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_above="@+id/elevation_text"
-                                android:text="218"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-                            <TextView
-                                android:id="@+id/elevation_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="55dp"
-                                android:text="@string/meter"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/highest_elev"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/days_ago5"
-                                android:textSize="10sp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/iron"
-                                android:textStyle="italic"/>
+                        <!--<RelativeLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="@dimen/personel_best_height">-->
 
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/elevation"-->
+                                <!--android:layout_width="@dimen/personel_best_width"-->
+                                <!--android:layout_height="@dimen/personel_best_height"-->
+                                <!--android:layout_centerHorizontal="true"-->
+                                <!--android:background="@drawable/elevation"-->
+                                <!--android:foregroundGravity="center"-->
+                                <!--android:padding="7dp" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/elevation_number"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_above="@+id/elevation_text"-->
+                                <!--android:text="218"-->
+                                <!--android:textSize="25sp"-->
+                                <!--android:textStyle="bold" />-->
+                            <!--<TextView-->
+                                <!--android:id="@+id/elevation_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="55dp"-->
+                                <!--android:text="@string/meter"-->
+                                <!--android:textSize="15sp" />-->
+                        <!--</RelativeLayout>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical">-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/highest_elev"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textStyle="bold"/>-->
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/days_ago5"-->
+                                <!--android:textSize="10sp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textColor="@color/iron"-->
+                                <!--android:textStyle="italic"/>-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
 
             </LinearLayout>
 

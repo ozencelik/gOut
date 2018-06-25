@@ -3,7 +3,7 @@
 
     <!--VideoActivity-->
     <string name="login_button">Giriş Yap</string>
-    <string name="signup_button">Üye ol</string>
+    <string name="signup_button">Üye Ol</string>
 
     <!--HomeFragment-->
     <string name="step_counter">Adım Sayar</string>

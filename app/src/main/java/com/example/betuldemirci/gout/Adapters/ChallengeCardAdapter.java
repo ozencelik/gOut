@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betuldemirci.gout.R;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -22,14 +25,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdapter.ViewHolder> {
 
     private Activity activity;
-    private int[] images;
+    private List<String> mImgUrl;
     private Dialog mDialog;
     private Context mContext;
 
 
-    public ChallengeCardAdapter(Activity activity, Context context, int[] images) {
+    public ChallengeCardAdapter(Activity activity, Context context, List<String> mAllUserId) {
         this.activity = activity;
-        this.images = images;
+        this.mImgUrl = mAllUserId;
         this.mContext = context;
     }
 
@@ -39,6 +42,7 @@ public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdap
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = activity.getLayoutInflater();
         View view = inflater.inflate(R.layout.item_image_cards, parent, false);
+
 
         final ViewHolder vHolder = new ViewHolder(view);
 
@@ -56,7 +60,9 @@ public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdap
                 ImageView dialog_contact_img = mDialog.findViewById(R.id.dialog_img);
 
                 //dialog_contact_img.setImageResource(mData.get(vHolder.getAdapterPosition()).getPhoto());
-                dialog_contact_img.setImageResource(images[vHolder.getAdapterPosition()]);
+                //dialog_contact_img.setImageResource(images[vHolder.getAdapterPosition()]);
+
+                //Picasso.get().load(mImgUrl.get(vHolder.getAdapterPosition())).into(dialog_contact_img);
 
 
                 Toast.makeText(mContext, "Clicked "+String.valueOf(vHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
@@ -65,22 +71,20 @@ public class ChallengeCardAdapter extends RecyclerView.Adapter<ChallengeCardAdap
         });
 
         return vHolder;
-        //return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.mCircleImg.setImageResource(images[position]);
+        Picasso.get().load(mImgUrl.get(position)).into(holder.mCircleImg);
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return mImgUrl.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textView;
         private CircleImageView mCircleImg;
 
         public ViewHolder(View view) {
